@@ -1,0 +1,772 @@
+{
+  "ok": true,
+  "mode": "nr-zone-local-sync",
+  "targetRepo": "D:\\github\\NROWE",
+  "generatedAt": "2026-10-09T09:47:52.799Z",
+  "sourceRevision": "f0deb9a681b0",
+  "assetVersion": "nr-f0deb9a681b0",
+  "financialYear": "2026-2027",
+  "previousYear": "2025-2026",
+  "reportingCurrentMonthIdx": 6,
+  "sources": [
+    {
+      "fy": "2026-2027",
+      "name": "PU-BUDGET NR ZONE.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/PU-BUDGET NR ZONE.xls",
+      "sha256": "ca350611a4f83e2380e3b3ccec4afac7047e670bbb1ba0c75cda604e603dfde0",
+      "size": 31232
+    },
+    {
+      "fy": "2026-2027",
+      "name": "PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
+      "sha256": "13ccb5d8d0de625a3d696995e5ff7ba6e4ff6e7a05ac4ee439691466eb7b3c9f",
+      "size": 19968
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-dept-demand-smh-budget-NR.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-budget-NR.xls",
+      "sha256": "7debe4cc99eef062322fb4185a74680fbfcc83928d7f6ee221e43b6c082b8bf8",
+      "size": 2058752
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-dept-demand-smh-actual-NR.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-actual-NR.xls",
+      "sha256": "9fba3239a5fc4a14727a976364666b2dba277c0e2adfe9b9aa5a6f468bfd6407",
+      "size": 2496000
+    },
+    {
+      "fy": "2026-2027",
+      "name": "demand-smh-budget-ZONE.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-budget-ZONE.xls",
+      "sha256": "22e8f7dd2ff5498aeee214fd70f0546cc4d668b726dbec3f39508d83cf7e87bb",
+      "size": 10752
+    },
+    {
+      "fy": "2026-2027",
+      "name": "demand-smh-actual-ZONE.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-actual-ZONE.xls",
+      "sha256": "0a8e6f8521c2b7072b7925afced992c43c1f4ae2dd117e1ccc87c64c15849bf9",
+      "size": 8192
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-budget - all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-budget - all div.xls",
+      "sha256": "003339e39898eae0a152703069c340dacf8cfa96eb200c1d6981b0e352acad8b",
+      "size": 220160
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-month-actual -all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-month-actual -all div.xls",
+      "sha256": "8458076ff738dcda3f828e809db3e071f9ba11729332058a87e2ff3505bb0d04",
+      "size": 151552
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-dept-demand-smh-budget-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-budget-all div.xls",
+      "sha256": "972e7265380a5e8ec1c661faaf2a056815494fabe3dbc97b08ff20fe55366835",
+      "size": 12788736
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-dept-demand-smh-actual-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-actual-all div.xls",
+      "sha256": "22bff8bdfe8c7fde06441d072f0f4002d8b2771a4e02fd70c6a8b05ca4438996",
+      "size": 4470272
+    },
+    {
+      "fy": "2026-2027",
+      "name": "demand-smh-budget -all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-budget -all div.xls",
+      "sha256": "458105cc993bfb765d9a8d482ecf30f04cb128b9fdb780a7bcc3145830bbf135",
+      "size": 66048
+    },
+    {
+      "fy": "2026-2027",
+      "name": "demand-smh-actual - all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-actual - all div.xls",
+      "sha256": "fdb8daaea362f8f496c20de49139a7d626d753e8823adca94c664f96c6999211",
+      "size": 53248
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-budget-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-budget-zonal.xls",
+      "sha256": "fa8e111efe81ab7174e4d849b6469ea4e1918dad4483a244b002f7d6b27aeacb",
+      "size": 31232
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-budget-actual-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-budget-actual-zonal.xls",
+      "sha256": "6f162fdae29a7d624dd77cba3717a34344df903ef6028aafa96e094c46432e57",
+      "size": 20992
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-dept-demand-smh-budget-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-dept-demand-smh-budget-zonal.xls",
+      "sha256": "8febc20c907d353cf8cb781b95c8f3b842d0b1c158c6f81739f784fc27646a08",
+      "size": 2120192
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-dept-demand-smh-budget-actual-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-dept-demand-smh-budget-actual-zonal.xls",
+      "sha256": "699ff5824d27b1d8b5c9da3aade50012ccf7adc479403e6d78f3902200863726",
+      "size": 3215360
+    },
+    {
+      "fy": "2025-2026",
+      "name": "demand-smh-budget-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/demand-smh-budget-zonal.xls",
+      "sha256": "122c2cd981ea00ba06b2a5447fb092fcedb9d9ce42e5e085865a58a030ba45aa",
+      "size": 10752
+    },
+    {
+      "fy": "2025-2026",
+      "name": "demand-smh-actual-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/demand-smh-actual-zonal.xls",
+      "sha256": "b5f129a1980bcadc6426c343a6aa653341fda411cf2e3dc74f50ae03e536710f",
+      "size": 8192
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-budget-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-budget-all div.xls",
+      "sha256": "eb65a25f57003e50c26fa8c26b638e5dfca62e07720539fdd69eff346ecd1b92",
+      "size": 222208
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-budget-actual-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-budget-actual-all div.xls",
+      "sha256": "3ea6ad4e179db899507a51b2630357a8ebbff5aec735d72b69c93b8851bf485b",
+      "size": 159232
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-dept-demand-smh-budget-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-dept-demand-smh-budget-all div.xls",
+      "sha256": "7ffa463a2c2685c4462144efbfbdfb8345a942757e564adf20703790c19dd3f8",
+      "size": 13029376
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-dept-demand-smh-budget-actual-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-dept-demand-smh-budget-actual-all div.xls",
+      "sha256": "f88674561f54853b095bfe26e4e62a2f0825e80316bebfe9bcde60422e59f1d4",
+      "size": 5825536
+    },
+    {
+      "fy": "2025-2026",
+      "name": "demand-smh-budget- all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/demand-smh-budget- all div.xls",
+      "sha256": "71a1f52ba03649fc3ab5c3b6777b23c420adcd2b2085a385ab889e9e42ab4a6c",
+      "size": 67072
+    },
+    {
+      "fy": "2025-2026",
+      "name": "demand-smh-actual-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/demand-smh-actual-all div.xls",
+      "sha256": "65e87b98da7d71213dcfbb6d437e231b5207d3c25dfaad853f86e73cf0ef652a",
+      "size": 53248
+    }
+  ],
+  "sourceFiles": [
+    {
+      "fy": "2026-2027",
+      "name": "PU-BUDGET NR ZONE.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/PU-BUDGET NR ZONE.xls",
+      "sha256": "ca350611a4f83e2380e3b3ccec4afac7047e670bbb1ba0c75cda604e603dfde0",
+      "size": 31232
+    },
+    {
+      "fy": "2026-2027",
+      "name": "PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
+      "sha256": "13ccb5d8d0de625a3d696995e5ff7ba6e4ff6e7a05ac4ee439691466eb7b3c9f",
+      "size": 19968
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-dept-demand-smh-budget-NR.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-budget-NR.xls",
+      "sha256": "7debe4cc99eef062322fb4185a74680fbfcc83928d7f6ee221e43b6c082b8bf8",
+      "size": 2058752
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-dept-demand-smh-actual-NR.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-actual-NR.xls",
+      "sha256": "9fba3239a5fc4a14727a976364666b2dba277c0e2adfe9b9aa5a6f468bfd6407",
+      "size": 2496000
+    },
+    {
+      "fy": "2026-2027",
+      "name": "demand-smh-budget-ZONE.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-budget-ZONE.xls",
+      "sha256": "22e8f7dd2ff5498aeee214fd70f0546cc4d668b726dbec3f39508d83cf7e87bb",
+      "size": 10752
+    },
+    {
+      "fy": "2026-2027",
+      "name": "demand-smh-actual-ZONE.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-actual-ZONE.xls",
+      "sha256": "0a8e6f8521c2b7072b7925afced992c43c1f4ae2dd117e1ccc87c64c15849bf9",
+      "size": 8192
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-budget - all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-budget - all div.xls",
+      "sha256": "003339e39898eae0a152703069c340dacf8cfa96eb200c1d6981b0e352acad8b",
+      "size": 220160
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-month-actual -all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-month-actual -all div.xls",
+      "sha256": "8458076ff738dcda3f828e809db3e071f9ba11729332058a87e2ff3505bb0d04",
+      "size": 151552
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-dept-demand-smh-budget-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-budget-all div.xls",
+      "sha256": "972e7265380a5e8ec1c661faaf2a056815494fabe3dbc97b08ff20fe55366835",
+      "size": 12788736
+    },
+    {
+      "fy": "2026-2027",
+      "name": "pu-dept-demand-smh-actual-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-actual-all div.xls",
+      "sha256": "22bff8bdfe8c7fde06441d072f0f4002d8b2771a4e02fd70c6a8b05ca4438996",
+      "size": 4470272
+    },
+    {
+      "fy": "2026-2027",
+      "name": "demand-smh-budget -all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-budget -all div.xls",
+      "sha256": "458105cc993bfb765d9a8d482ecf30f04cb128b9fdb780a7bcc3145830bbf135",
+      "size": 66048
+    },
+    {
+      "fy": "2026-2027",
+      "name": "demand-smh-actual - all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-actual - all div.xls",
+      "sha256": "fdb8daaea362f8f496c20de49139a7d626d753e8823adca94c664f96c6999211",
+      "size": 53248
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-budget-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-budget-zonal.xls",
+      "sha256": "fa8e111efe81ab7174e4d849b6469ea4e1918dad4483a244b002f7d6b27aeacb",
+      "size": 31232
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-budget-actual-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-budget-actual-zonal.xls",
+      "sha256": "6f162fdae29a7d624dd77cba3717a34344df903ef6028aafa96e094c46432e57",
+      "size": 20992
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-dept-demand-smh-budget-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-dept-demand-smh-budget-zonal.xls",
+      "sha256": "8febc20c907d353cf8cb781b95c8f3b842d0b1c158c6f81739f784fc27646a08",
+      "size": 2120192
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-dept-demand-smh-budget-actual-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-dept-demand-smh-budget-actual-zonal.xls",
+      "sha256": "699ff5824d27b1d8b5c9da3aade50012ccf7adc479403e6d78f3902200863726",
+      "size": 3215360
+    },
+    {
+      "fy": "2025-2026",
+      "name": "demand-smh-budget-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/demand-smh-budget-zonal.xls",
+      "sha256": "122c2cd981ea00ba06b2a5447fb092fcedb9d9ce42e5e085865a58a030ba45aa",
+      "size": 10752
+    },
+    {
+      "fy": "2025-2026",
+      "name": "demand-smh-actual-zonal.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/demand-smh-actual-zonal.xls",
+      "sha256": "b5f129a1980bcadc6426c343a6aa653341fda411cf2e3dc74f50ae03e536710f",
+      "size": 8192
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-budget-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-budget-all div.xls",
+      "sha256": "eb65a25f57003e50c26fa8c26b638e5dfca62e07720539fdd69eff346ecd1b92",
+      "size": 222208
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-budget-actual-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-budget-actual-all div.xls",
+      "sha256": "3ea6ad4e179db899507a51b2630357a8ebbff5aec735d72b69c93b8851bf485b",
+      "size": 159232
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-dept-demand-smh-budget-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-dept-demand-smh-budget-all div.xls",
+      "sha256": "7ffa463a2c2685c4462144efbfbdfb8345a942757e564adf20703790c19dd3f8",
+      "size": 13029376
+    },
+    {
+      "fy": "2025-2026",
+      "name": "pu-dept-demand-smh-budget-actual-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/pu-dept-demand-smh-budget-actual-all div.xls",
+      "sha256": "f88674561f54853b095bfe26e4e62a2f0825e80316bebfe9bcde60422e59f1d4",
+      "size": 5825536
+    },
+    {
+      "fy": "2025-2026",
+      "name": "demand-smh-budget- all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/demand-smh-budget- all div.xls",
+      "sha256": "71a1f52ba03649fc3ab5c3b6777b23c420adcd2b2085a385ab889e9e42ab4a6c",
+      "size": 67072
+    },
+    {
+      "fy": "2025-2026",
+      "name": "demand-smh-actual-all div.xls",
+      "relativePath": "data/mb-budget-sync/source-files/2025-2026/demand-smh-actual-all div.xls",
+      "sha256": "65e87b98da7d71213dcfbb6d437e231b5207d3c25dfaad853f86e73cf0ef652a",
+      "size": 53248
+    }
+  ],
+  "scopes": [
+    "03",
+    "0301",
+    "0303",
+    "0304",
+    "0305",
+    "0306",
+    "0307",
+    "0308",
+    "0309",
+    "0311",
+    "0312",
+    "0313",
+    "0318",
+    "0319",
+    "0320",
+    "0322",
+    "0323",
+    "0325",
+    "0327",
+    "0328",
+    "0329",
+    "0330",
+    "0331"
+  ],
+  "previousYearScopes": [
+    "03",
+    "0301",
+    "0303",
+    "0304",
+    "0305",
+    "0306",
+    "0307",
+    "0308",
+    "0309",
+    "0311",
+    "0312",
+    "0313",
+    "0318",
+    "0319",
+    "0320",
+    "0322",
+    "0323",
+    "0325",
+    "0327",
+    "0328",
+    "0329",
+    "0330",
+    "0331"
+  ],
+  "calculationValidation": {
+    "ok": true,
+    "rule": "PU source controls reconciled for annual budget and all twelve months; rounding residuals retained."
+  },
+  "warnings": [
+    {
+      "fy": "2026-2027",
+      "scope": "0319",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": []
+    },
+    {
+      "fy": "2026-2027",
+      "scope": "0327",
+      "coverage": [
+        true,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "warnings": []
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0301",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0303",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0304",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0305",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0306",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0307",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0308",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0309",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0311",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0312",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0313",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0318",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0319",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0320",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0322",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0323",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0325",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0327",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0328",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0329",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0330",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0331",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    }
+  ],
+  "portalValidation": {
+    "ok": true,
+    "testedAt": "2026-10-09T09:39:05.635Z",
+    "scopes": 23,
+    "scopeViewChecks": 276,
+    "frViews": 13,
+    "exports": 18,
+    "report": "data/mb-budget-sync/nr-portal-test.json"
+  }
+}

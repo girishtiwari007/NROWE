@@ -1,0 +1,37 @@
+{
+  "financialYear": "2026-2027",
+  "generatedAt": "2026-10-06T10:23:36+05:30",
+  "sourceFolder": "D:\\PORTAL DATA\\current year",
+  "files": {
+    "pu_budget": {
+      "detectedFile": "PU-BUDGET.xls",
+      "storedAs": "pu-budget.xls",
+      "label": "PU-wise Budget Available"
+    },
+    "pu_month": {
+      "detectedFile": "PU-MONTH-ACTUAL.xls",
+      "storedAs": "pu-month-actual.xls",
+      "label": "PU-wise Month-wise Actual"
+    },
+    "detail_budget": {
+      "detectedFile": "PU-DEPT-DEMAND-SMH-BUDGET.xls",
+      "storedAs": "pu-dept-demand-smh-budget.xls",
+      "label": "Department / SMH PU-wise Budget"
+    },
+    "detail_actual": {
+      "detectedFile": "PU-DEPT-DEMAND-SMH-ACTUAL.xls",
+      "storedAs": "pu-dept-demand-smh-actual.xls",
+      "label": "Department / SMH PU-wise Month-wise Actual"
+    },
+    "demand_budget": {
+      "detectedFile": "DEMAND-SMH-BUGDET.xls",
+      "storedAs": "demand-smh-budget.xls",
+      "label": "Demand/SMH Budget Summary"
+    },
+    "demand_actual": {
+      "detectedFile": "DEMAND-SMH-ACTUAL.xls",
+      "storedAs": "demand-smh-actual.xls",
+      "label": "Demand/SMH Month-wise Actual Summary"
+    }
+  }
+}

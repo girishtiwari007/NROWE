@@ -1,0 +1,11 @@
+{
+  "purpose": "Future-ready placeholder for finance rules. Current JavaScript rules remain authoritative until config loading is intentionally implemented and tested.",
+  "rules": {
+    "rgBgReplacement": {
+      "enabled": true,
+      "description": "When RG financial-year amount is available for a PU, RG is considered as BG_ISL/OBA and BG_ISL is skipped for calculations."
+    },
+    "skippedPUs": [],
+    "importantPUs": []
+  }
+}

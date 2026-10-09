@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Simulator - Revenue Liability Portal</title>
+  <style>
+    :root{
+      --navy:#071324;
+      --panel:#102B4E;
+      --gold:#C9A84C;
+      --line:#284C75;
+      --bg:#EDF3F8;
+      --ink:#0A1628;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Segoe UI",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    .sim-top{
+      background:linear-gradient(90deg,var(--navy),var(--panel));
+      color:#fff;
+      border-bottom:3px solid var(--gold);
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .sim-title{
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.2px;
+      margin-right:auto;
+    }
+    .sim-control{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(201,168,76,.55);
+      border-radius:8px;
+      padding:5px 7px;
+    }
+    .sim-control label{
+      color:#FFE9A8;
+      font-size:10px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    select,.sim-btn{
+      min-height:30px;
+      border:2px solid #9EB8D2;
+      border-radius:7px;
+      padding:4px 9px;
+      font-size:11px;
+      font-weight:800;
+      background:#fff;
+      color:#08203A;
+    }
+    .sim-btn{
+      cursor:pointer;
+      background:linear-gradient(180deg,#FFE18A,#C9A84C);
+      border-color:#FFE9A8;
+    }
+    .sim-btn.secondary{
+      background:#F6FAFF;
+      border-color:#9EB8D2;
+    }
+    .sim-stage{
+      flex:1;
+      display:grid;
+      grid-template-columns:minmax(260px,auto) 280px;
+      gap:18px;
+      align-items:start;
+      justify-content:center;
+      padding:22px;
+    }
+    .device-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .phone{
+      background:#071324;
+      border:10px solid #071324;
+      border-radius:32px;
+      padding:12px;
+      box-shadow:0 18px 44px rgba(10,22,40,.28), inset 0 0 0 1px rgba(255,255,255,.08);
+      position:relative;
+      transition:width .2s ease,height .2s ease;
+    }
+    .phone::before{
+      content:"";
+      width:76px;
+      height:7px;
+      background:#1C3A5E;
+      border-radius:20px;
+      position:absolute;
+      top:8px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:2;
+    }
+    .screen{
+      background:#fff;
+      border-radius:20px;
+      overflow:hidden;
+      width:100%;
+      height:100%;
+      box-shadow:inset 0 0 0 1px #C7D4E2;
+    }
+    iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+      background:#fff;
+    }
+    .dim{
+      color:#496276;
+      font-size:12px;
+      font-weight:800;
+    }
+    .side{
+      background:#fff;
+      border:1px solid #D8E5F2;
+      border-radius:10px;
+      padding:16px;
+      box-shadow:0 3px 16px rgba(10,22,40,.08);
+    }
+    .side h2{
+      font-size:14px;
+      margin:0 0 10px;
+      color:#0A1628;
+    }
+    .side ul{
+      margin:0;
+      padding-left:17px;
+      color:#33485F;
+      font-size:12px;
+      line-height:1.55;
+    }
+    .side li{margin:6px 0}
+    .status{
+      margin-top:14px;
+      background:#FFF8D8;
+      border:1px solid var(--gold);
+      border-radius:8px;
+      padding:10px;
+      color:#4F3500;
+      font-size:11px;
+      font-weight:800;
+      line-height:1.45;
+    }
+    @media(max-width:900px){
+      .sim-stage{grid-template-columns:1fr;padding:12px}
+      .side{order:-1}
+      .phone{max-width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="sim-top">
+    <div class="sim-title">Revenue Liability Portal - Mobile Simulator</div>
+    <div class="sim-control">
+      <label for="deviceSelect">Device</label>
+      <select id="deviceSelect">
+        <option value="375x667">iPhone SE - 375 x 667</option>
+        <option value="390x844" selected>iPhone 12/13 - 390 x 844</option>
+        <option value="393x873">Pixel 7 - 393 x 873</option>
+        <option value="430x932">Large Phone - 430 x 932</option>
+        <option value="768x1024">Tablet - 768 x 1024</option>
+      </select>
+    </div>
+    <button class="sim-btn secondary" id="rotateBtn" type="button">Rotate</button>
+    <button class="sim-btn secondary" id="reloadBtn" type="button">Reload</button>
+    <button class="sim-btn" id="openBtn" type="button">Open Full Portal</button>
+  </div>
+
+  <main class="sim-stage">
+    <section class="device-wrap">
+      <div class="phone" id="phone">
+        <div class="screen">
+          <iframe id="portalFrame" src="index.html" title="Revenue Liability Portal mobile preview"></iframe>
+        </div>
+      </div>
+      <div class="dim" id="dimLabel"></div>
+    </section>
+
+    <aside class="side">
+      <h2>What to check</h2>
+      <ul>
+        <li>Login screen fits without horizontal scrolling.</li>
+        <li>Header, filters, cards and tabs do not overlap.</li>
+        <li>Wide tables are readable or scroll cleanly.</li>
+        <li>Excel and PDF buttons remain clickable.</li>
+        <li>Future Mobile Lookup cards should appear cleanly here.</li>
+      </ul>
+      <div class="status">
+        This page is only a simulator shell. It does not change portal data or calculations.
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    const phone = document.getElementById('phone');
+    const frame = document.getElementById('portalFrame');
+    const deviceSelect = document.getElementById('deviceSelect');
+    const dimLabel = document.getElementById('dimLabel');
+    let rotated = false;
+
+    function currentSize(){
+      const [w,h] = deviceSelect.value.split('x').map(Number);
+      return rotated ? {w:h,h:w} : {w,h};
+    }
+
+    function applySize(){
+      const {w,h} = currentSize();
+      phone.style.width = (w + 44) + 'px';
+      phone.style.height = (h + 54) + 'px';
+      dimLabel.textContent = `Viewport: ${w} x ${h}`;
+    }
+
+    deviceSelect.addEventListener('change', () => {
+      rotated = false;
+      applySize();
+    });
+
+    document.getElementById('rotateBtn').addEventListener('click', () => {
+      rotated = !rotated;
+      applySize();
+    });
+
+    document.getElementById('reloadBtn').addEventListener('click', () => {
+      frame.contentWindow.location.reload();
+    });
+
+    document.getElementById('openBtn').addEventListener('click', () => {
+      window.open('index.html', '_blank');
+    });
+
+    applySize();
+  </script>
+</body>
+</html>

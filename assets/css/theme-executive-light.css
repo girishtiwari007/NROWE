@@ -1,0 +1,46 @@
+:root {
+  --navy:#1F3A5F; --navy-mid:#EFF5FA; --steel:#2F6FA3;
+  --gold:#B88A2D; --accent:#2AA6A1; --accent2:#D85A3A;
+  --green:#16875A; --green-lt:#DFF2EA;
+  --red-lt:#FFE4E1; --amber-lt:#FFF4D6;
+  --ink:#172B43; --body:#30475E; --muted:#6D8094;
+  --surface:#F7FAFC; --white:#FFFFFF; --border:#D8E3EC;
+  --cs:#E6F4EC; --co:#FFF7D8; --pl:#FFFFFF;
+  --sh:0 1px 8px rgba(31,58,95,.08);
+}
+
+body{background:#F7FAFC}
+.hdr{height:64px;background:#FFFFFF;color:#172B43;border-bottom:3px solid #2AA6A1;box-shadow:0 1px 10px rgba(31,58,95,.08)}
+.ht h1{color:#172B43}
+.ht p,.as-on{color:#6D8094}
+.emblem circle:first-child,.emblem g{stroke:#2F6FA3}
+.emblem circle:nth-child(2),.emblem circle:last-child{fill:#2AA6A1}
+.fbar{background:#EFF5FA;border-bottom:1px solid #D8E3EC}
+.fbar-lbl,.live-clock{color:#2F6FA3}
+select.fsel,.util-input{background:#FFFFFF;color:#172B43;border-color:#C7D5E1}
+.util-filter,.theme-picker{display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;border:1px solid #C7D5E1;border-radius:6px;padding:2px 6px}
+.util-filter label,.theme-picker label{color:#2F6FA3;font-size:10px}
+.rg-note{background:#FFF9E8;border-color:#D8B55A;color:#7A5400}
+.card,.twrap,.jun-sec,.note-box,.upload-card,.upload-log,.tchart-wrap{border:1px solid #D8E3EC;box-shadow:var(--sh)}
+.card{border-top-width:3px}
+thead tr,thead th{background:#1F3A5F}
+thead th.sub{background:#2F6FA3;border-bottom-color:#2AA6A1}
+.fy-badge{background:#EAF4F3;color:#16875A;border:1px solid #B9DDD9}
+.dl-btn,.jun-badge{background:#2AA6A1;color:#FFFFFF}
+.tab.active{color:#2F6FA3;border-bottom-color:#2AA6A1}
+
+/* Command panel override */
+.fbar{background:linear-gradient(90deg,#071324 0%,#102B4E 52%,#071324 100%)!important;padding:10px 16px!important;align-items:stretch!important;gap:10px!important;border-bottom:3px solid #C9A84C!important;box-shadow:0 4px 16px rgba(10,22,40,.18)!important}
+.fbar-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;border:1px solid rgba(201,168,76,.65);border-radius:8px;padding:8px 10px;background:rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.filter-main{flex:1 1 650px}.status-main{flex:0 1 auto;background:rgba(10,22,40,.82)}.view-main{flex:0 1 auto;margin-left:auto}
+.fbar-lbl{color:#FFE9A8!important;background:#5A430B;border:1px solid #C9A84C;border-radius:6px;padding:6px 10px;font-size:11px!important;font-weight:900;text-transform:uppercase;white-space:nowrap}
+select.fsel{background:#fff!important;color:#08203A!important;border:2px solid #9EB8D2!important;padding:7px 28px 7px 10px!important;border-radius:7px!important;font-size:12px!important;font-weight:800!important;min-height:34px;box-shadow:0 2px 5px rgba(0,0,0,.12)}
+select.fsel.wide{min-width:230px}select.fsel.compact{min-width:78px}
+.util-filter,.theme-picker,.block-style-picker{background:#F6FAFF!important;border:2px solid #9EB8D2!important;border-radius:7px!important;padding:3px 7px!important;min-height:36px!important;gap:6px!important}
+.util-filter label,.theme-picker label,.block-style-picker label{color:#08203A!important;font-size:11px!important;font-weight:900}
+.util-input{width:68px;background:#fff!important;color:#08203A!important;border:2px solid #9EB8D2!important;padding:6px 7px!important;border-radius:6px!important;font-size:12px!important;font-weight:800!important;min-height:30px}
+.rg-note{background:#FFF4C2!important;border:2px solid #C9A84C!important;color:#4F3500!important;font-size:11px!important;padding:7px 10px!important;border-radius:7px!important;font-weight:900;white-space:nowrap}
+.cur-month-pill{background:#0E7A49;color:#fff;font-size:11px;padding:8px 11px;border-radius:7px;font-weight:900;box-shadow:0 2px 8px rgba(14,122,73,.24);white-space:nowrap}
+.live-clock{font-size:12px!important;color:#91D7FF!important;font-weight:900;background:#071324;border:1px solid #315C86;border-radius:7px;padding:8px 10px;white-space:nowrap}
+.dl-btn{background:linear-gradient(180deg,#FFE18A 0%,#C9A84C 100%)!important;color:#071324!important;border:2px solid #FFE9A8!important;padding:8px 14px!important;border-radius:7px!important;font-size:12px!important;font-weight:900!important;min-height:36px;box-shadow:0 3px 10px rgba(0,0,0,.18)}
+@media(max-width:1100px){.view-main{margin-left:0}.fbar-group{width:100%}.filter-main,.status-main,.view-main{flex:1 1 100%}select.fsel.wide{min-width:180px}}

@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Ordinary Working Expenses Portal v2.1.0 | GitHub Pages cache-safe build | NR Zone / Northern Railway | Split static merged build -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="portal-build" content="rlp-mbd-2026-10-06-history-compare19-a255d93b3c78">
+<title>Ordinary Working Expenses (OWE) PORTAL - NR Zone | Northern Railway</title>
+<link rel="stylesheet" href="assets/css/main.css?v=20261009-py2">
+<link id="themeStylesheet" rel="stylesheet" href="">
+<link rel="stylesheet" href="assets/css/executive-portal.css?v=20261009-py2">
+<script src="assets/vendor/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="assets/css/zonal-fr.css?v=20261009-py2">
+</head>
+<body class="professional-preview">
+<a class="mb-budget-link" href="https://girishtiwari007.github.io/MB-BUDGET/" title="Back to MB-BUDGET PORTAL">← Back to MB-BUDGET PORTAL</a>
+
+<!-- LOGIN OVERLAY -->
+<div id="loginOverlay" class="hidden">
+  <div class="login-box">
+    <div class="login-emblem">NR</div>
+    <div class="login-badge">NORTHERN RAILWAY</div>
+    <div class="login-title" id="loginTitle">UPLOAD ADMIN ACCESS</div>
+    <div class="login-sub" id="loginSub">Portal is open for viewing.<br>Enter ADMIN password only for data upload.</div>
+    <div class="login-field" id="loginUserField" style="display:none">
+      <label>User ID</label>
+      <div class="login-inp-wrap">
+        <input class="login-inp" type="text" id="loginUser" value="ADMIN" placeholder="Enter User ID" autocomplete="off"
+          onkeydown="if(event.key==='Enter')document.getElementById('loginPwd').focus()">
+      </div>
+    </div>
+    <div class="login-field">
+      <label>Password</label>
+      <div class="login-inp-wrap">
+        <input class="login-inp" type="password" id="loginPwd" placeholder="Enter Password"
+          onkeydown="if(event.key==='Enter')doLogin()">
+        <span class="login-eye" onclick="var i=document.getElementById('loginPwd');i.type=i.type==='password'?'text':'password'">Show</span>
+      </div>
+    </div>
+    <div class="human-check" id="adminHumanCheck" aria-live="polite"></div>
+    <button class="login-btn" onclick="doLogin()">UNLOCK UPLOAD</button>
+    <button class="login-cancel" type="button" onclick="closeUploadLogin()">CANCEL</button>
+    <div class="login-err" id="loginErr"></div>
+    <div style="font-size:9px;color:#A0B8D0;margin-top:16px">For Official Use Only  -  FY 2026-27</div>
+  </div>
+</div>
+
+<!-- EXPORT-ONLY USER LOGIN -->
+<div id="exportLoginOverlay" class="hidden export-login-overlay">
+  <div class="login-box export-login-box">
+    <div class="login-emblem">EX</div><div class="login-badge">EXPORT USER</div>
+    <div class="login-title">DOWNLOAD ACCESS</div>
+    <div class="login-sub">Excel, PDF and PowerPoint only. Upload and portal administration remain locked.</div>
+    <div class="login-field"><label>User ID</label><input class="login-inp" type="text" value="EXPORT" readonly></div>
+    <div class="login-field"><label>Password</label><div class="login-inp-wrap">
+      <input class="login-inp" type="password" id="exportLoginPwd" placeholder="Enter export password" autocomplete="off" onkeydown="if(event.key==='Enter')doExportLogin()">
+      <span class="login-eye" onclick="var i=document.getElementById('exportLoginPwd');i.type=i.type==='password'?'text':'password'">Show</span>
+    </div></div>
+    <div class="human-check" id="exportHumanCheck" aria-live="polite"></div>
+    <button class="login-btn" type="button" onclick="doExportLogin()">UNLOCK EXPORTS</button>
+    <button class="login-cancel" type="button" onclick="closeExportLogin()">CANCEL</button>
+    <div class="login-err" id="exportLoginErr"></div>
+  </div>
+</div>
+
+
+<!-- HEADER -->
+<div class="hdr">
+  <svg class="emblem" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="46" fill="none" stroke="#C9A84C" stroke-width="4"/>
+    <circle cx="50" cy="50" r="10" fill="#C9A84C"/>
+    <g stroke="#C9A84C" stroke-width="3">
+      <line x1="50" y1="40" x2="50" y2="8"/><line x1="50" y1="60" x2="50" y2="92"/>
+      <line x1="40" y1="50" x2="8" y2="50"/><line x1="60" y1="50" x2="92" y2="50"/>
+      <line x1="43" y1="43" x2="20" y2="20"/><line x1="57" y1="57" x2="80" y2="80"/>
+      <line x1="57" y1="43" x2="80" y2="20"/><line x1="43" y1="57" x2="20" y2="80"/>
+    </g>
+    <circle cx="50" cy="50" r="6" fill="#F4A932"/>
+  </svg>
+  <div class="ht">
+    <h1>Ordinary Working Expenses</h1>
+    <p>NR Zone · Northern Railway</p>
+  </div>
+  <div class="hdr-r">
+    <span class="fy-badge">FY 2026-27</span>
+    <span class="as-on" id="asOnLabel">Updated 25-Sep-2026 13:07</span>
+  </div>
+</div>
+
+<!-- REPORT MENU -->
+<div class="report-menu" id="reportMenu" role="navigation" aria-label="Report navigation">
+  <div class="report-menu-head">
+    <span class="nav-pointer" aria-hidden="true"></span>
+    <div>
+      <div class="report-menu-title">Finance Workspace</div>
+      <div class="report-menu-sub">Reports and analysis</div>
+    </div>
+    <span class="report-menu-badge">FY 2026–27</span>
+  </div>
+  <div class="report-menu-actions">
+    <button class="report-menu-btn" type="button" data-report-tab="summary" data-nav-group="overview" aria-pressed="false">
+      <span>Summary</span><small>Main points</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn active" type="button" data-report-tab="liability" data-nav-group="analysis" aria-pressed="true">
+      <span>Main Report</span><small>OWE statement</small>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="smhdetail" data-nav-group="analysis" aria-pressed="false">
+      <span>Department wise</span><small>Wise details</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="demandsmh" data-nav-group="analysis" aria-pressed="false">
+      <span>Demand wise</span><small>Grant summary</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="pumaster" data-nav-group="analysis" aria-pressed="false">
+      <span>PU Master</span><small>Code reference</small>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="monthwise" data-nav-group="analysis" aria-pressed="false">
+      <span>Month-wise</span><small>Actuals and projection</small>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="bpanalysis" data-nav-group="control" aria-pressed="false">
+      <span>BP Analysis</span><small>Proportionate review</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="budgetcontrol" data-nav-group="control" aria-pressed="false">
+      <span>Budget Control</span><small>Saving/excess action</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="excessshortfall" data-nav-group="control" aria-pressed="false">
+      <span>AE vs BP</span><small>HQ excess-shortfall</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="trend" data-nav-group="insights" aria-pressed="false">
+      <span>Graphs</span><small>Trend analysis</small>
+    </button>
+    <button class="report-menu-btn feature-ai" type="button" data-report-tab="aitrend" data-nav-group="insights" aria-pressed="false">
+      <span>AI Summary</span><small>Finance insights and PU risk remarks</small><em>AI</em>
+    </button>
+    <button class="report-menu-btn feature-export" type="button" data-report-tab="dataexport" data-nav-group="reports" aria-pressed="false">
+      <span>Data Export</span><small>Excel, PDF, PPT and SMH matrix reports</small><em>EXPORT</em>
+    </button>
+<button class="report-menu-btn" type="button" data-report-tab="zonalfr" aria-pressed="false"><span>ZONAL FR Review</span></button>
+    <button class="report-menu-btn feature-history" type="button" data-report-tab="historycompare" data-nav-group="reports" aria-pressed="false">
+      <span>History Compare</span><small>Sync-to-sync budget and actual movement</small><em>SYNC</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="additionalremarks" data-nav-group="reports" aria-pressed="false">
+      <span>Additional Remarks</span><small>Sources and page notes</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="remarks" aria-pressed="false" style="display:none">
+      <span>Remarks</span><small>Sources and rules</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="backup" id="backupMenuBtn" aria-pressed="false" style="display:none">
+      <span>Backup</span><small>Admin zip export</small><em>NEW</em>
+    </button>
+    <button class="report-menu-btn" type="button" data-report-tab="admin" id="adminMenuBtn" aria-pressed="false" hidden style="display:none">
+      <span>Portal Admin</span><small>Names, layout, sources and backup</small><em>NEW</em>
+    </button>
+  </div>
+</div>
+
+<div id="nrScopeStatus" role="status" style="padding:6px 14px;font-size:11px;color:var(--muted)"></div>
+<!-- FILTER BAR -->
+<div class="fbar">
+  <div class="fbar-group filter-main">
+    <span class="fbar-lbl">Filters</span>
+    <label for="nrScopeFilter" style="color:#fff;white-space:nowrap;font-size:10px">Zone / Division / AU</label>
+    <select class="fsel wide" id="nrScopeFilter" onchange="applyNRScope(this.value)"></select>
+    <select class="fsel" id="typeFilter" onchange="handleTopFilterChange('PU Type filter')">
+      <option value="all">All PU Types</option>
+      <option value="Staff">Staff PU</option>
+      <option value="Non Staff">Non Staff PU</option>
+    </select>
+    <select class="fsel" id="liabFilter" onchange="handleTopFilterChange('Liability filter')">
+      <option value="all">All Liabilities</option>
+      <option value="Committed">Committed</option>
+      <option value="Planned">Planned</option>
+    </select>
+    <select class="fsel wide" id="activityFilter" onchange="handleTopFilterChange('Activity filter')">
+      <option value="all">All Activity</option>
+      <option value="budget-no-exp">Budget Available, No Expenses</option>
+    </select>
+    <select class="fsel important-filter" id="puFocusFilter" onchange="handleTopFilterChange('PU Focus filter')">
+      <option value="all">All PUs</option>
+      <option value="important">Important PUs only</option>
+    </select>
+    <span class="util-filter">
+      <label for="utilPctFilter">Util %</label>
+      <select class="fsel compact" id="utilCompare" onchange="handleTopFilterChange('Utilisation filter')">
+        <option value="all">All</option>
+        <option value="above">Above</option>
+        <option value="below">Below</option>
+      </select>
+      <input class="util-input" id="utilPctFilter" type="number" min="0" max="999" step="1" placeholder="%" oninput="handleTopFilterChange('Utilisation percent filter')">
+    </span>
+    <span class="export-actions">
+      <button class="clear-filter-btn" type="button" onclick="resetTopFilters()">Clear filters</button>
+    </span>
+  </div>
+  <div class="fbar-group status-main">
+    <span class="rg-note" id="rgNote">BG_ISL</span>
+    <span class="cur-month-pill">Month: <span id="curMonBadge">JUN 2026</span></span>
+    <span class="live-clock" id="liveClock"></span>
+  </div>
+</div>
+
+<!-- SMART TOOLS SIMULATION -->
+<div class="smart-tools" id="smartTools">
+  <div class="quick-search">
+    <label for="quickSearch">Quick Search</label>
+    <input id="quickSearch" type="search" placeholder="Search report, PU code, PU name..." autocomplete="off">
+    <div class="quick-results" id="quickResults"></div>
+  </div>
+  <div class="smart-actions">
+    <div class="bi-mode-toggle" id="reportViewToggle" aria-label="Report view mode">
+      <button type="button" class="active" data-report-view-mode="classic">Classic Table</button>
+      <button type="button" data-report-view-mode="bi">BI-AI View</button>
+    </div>
+    <div class="report-export-actions" id="reportExportMenu" aria-label="Export current visible report">
+      <span class="export-label">Export view</span>
+      <button type="button" class="export-format excel" onclick="exportCurrentView('Excel')" title="Export the currently visible filtered table to Excel">Excel</button>
+      <button type="button" class="export-format pdf" onclick="exportCurrentView('PDF')" title="Export the currently visible report to PDF">PDF</button>
+      <button type="button" class="export-format ppt" onclick="exportCurrentView('PPT')" title="Export the currently visible report to PowerPoint">PPT</button>
+      <details class="more-actions">
+        <summary aria-label="More report actions">More</summary>
+        <div class="more-actions-menu">
+          <button type="button" id="saveViewBtn">Save current view</button>
+          <button type="button" id="officerBriefBtn">Officer brief</button>
+          <button type="button" id="startTourBtn">Start portal tour</button>
+          <button type="button" onclick="exportCurrentTabFull('Excel')">Full report · Excel</button>
+          <button type="button" onclick="exportCurrentTabFull('PDF')">Full report · PDF</button>
+          <button type="button" onclick="exportCurrentTabFull('PPT')">Full report · PPT</button>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<div class="tour-bubble" id="tourBubble" aria-live="polite">
+  <div class="tour-title" id="tourTitle">Portal Tour</div>
+  <div class="tour-text" id="tourText"></div>
+  <div class="tour-actions">
+    <button type="button" id="tourNextBtn">Next</button>
+    <button type="button" id="tourCloseBtn">Close</button>
+  </div>
+</div>
+
+<div class="brief-modal" id="officerBriefModal" aria-hidden="true">
+  <div class="brief-box">
+    <div class="brief-head">
+      <div>
+        <div class="brief-title">Officer Brief</div>
+        <div class="brief-sub">Presentation-ready financial summary</div>
+      </div>
+      <div class="brief-head-actions">
+        <button type="button" id="briefPdfBtn">PDF Print</button>
+        <button type="button" id="briefCloseBtn">Close</button>
+      </div>
+    </div>
+    <div class="brief-body" id="officerBriefBody"></div>
+  </div>
+</div>
+
+
+<!-- CARDS -->
+<div class="dashboard-dock" id="dashboardDock">
+  <button class="dock-toggle" id="dockToggle" type="button" aria-expanded="true" aria-controls="dashboardPanel" title="Auto-hide summary panel">
+    <span class="dock-hand" aria-hidden="true"></span>
+    <span class="dock-text">Summary Panel</span>
+    <span class="dock-state" id="dockState">PINNED</span>
+  </button>
+  <button class="dock-pin" id="dockPin" type="button" aria-pressed="true" title="Pin or auto-hide summary panel">PIN</button>
+</div>
+
+<div class="dashboard-panel" id="dashboardPanel">
+<div class="cards" id="summaryCards"></div>
+
+<!-- JUNE PROGRESS -->
+<div class="jun-sec">
+  <div class="jun-title">
+    <span id="curMonLabel">JUNE 2026</span> - Highest Utilized PU Progress
+    <span class="jun-badge">TOP UTILIZATION</span>
+  </div>
+  <div class="prog-grid" id="juneBars"></div>
+</div>
+
+<!-- NOTE -->
+<div class="note-box" style="background:#FFFBE6;border:1.5px solid #F4C842;border-radius:6px;padding:10px 14px;margin:0 20px 10px;display:flex;align-items:flex-start;gap:8px">
+  <span style="font-size:16px;flex-shrink:0">!</span>
+  <span style="font-size:10px;color:#5A3E00;font-weight:700;line-height:1.7">
+    <span style="background:#F4C842;padding:1px 5px;border-radius:3px;font-weight:800">Figures:</span> Stored in Rs '000s - e.g. 6,687,224 means Rs 6,687,224,000 (Rs 668.72 Cr).
+    &nbsp;|&nbsp;
+    <span style="background:#F4C842;padding:1px 5px;border-radius:3px;font-weight:800">Budget:</span> Each PU uses RG as soon as allotted, in any month; otherwise BG_ISL applies. OBA and dependent calculations use this effective budget.
+    &nbsp;|&nbsp;
+    <span style="background:#F4C842;padding:1px 5px;border-radius:3px;font-weight:800">Liability Formula:</span> <span id="noteFormulaText">Completed month actuals + current month till-date + current month remaining = current month total liability; balance is projected over remaining months.</span>
+    &nbsp;|&nbsp;
+    <span style="background:#F4C842;padding:1px 5px;border-radius:3px;font-weight:800">FY runs APR to MAR (12 months).</span>
+    Current month auto-detected from system date.
+  </span>
+</div>
+</div>
+
+<!-- TABS -->
+<div class="tabs legacy-tabs" aria-hidden="true">
+  <div class="tab tab-feature" onclick="switchTab('summary')">Summary</div>
+  <div class="tab active" onclick="switchTab('liability')">OWE Statement</div>
+  <div class="tab" onclick="switchTab('smhdetail')">Department wise</div>
+  <div class="tab" onclick="switchTab('demandsmh')">Demand wise</div>
+  <div class="tab" onclick="switchTab('pumaster')">PU Master</div>
+  <div class="tab" onclick="switchTab('monthwise')">Month-wise Actuals</div>
+  <div class="tab tab-feature" onclick="switchTab('bpanalysis')">Budget Proportionate Analysis</div>
+  <div class="tab tab-feature" onclick="switchTab('budgetcontrol')">Budget Control</div>
+  <div class="tab tab-feature" onclick="switchTab('excessshortfall')">AE vs BP</div>
+  <div class="tab" onclick="switchTab('trend')">Trend Analysis Graphs</div>
+  <div class="tab" onclick="switchTab('aitrend')">AI Trend Analysis Summary</div>
+  <div class="tab" onclick="switchTab('dataexport')">Data Export</div>
+  <div class="tab tab-feature" onclick="switchTab('historycompare')">History Compare</div>
+  <div class="tab tab-feature" onclick="switchTab('additionalremarks')">Additional Remarks</div>
+  <div class="tab" id="adminTab" onclick="switchTab('admin')" hidden style="display:none">Portal Admin</div>
+  <div class="tab" onclick="switchTab('remarks')">Remarks / Clarification</div>
+  <div class="tab" id="backupTab" onclick="switchTab('backup')">Portal Backup</div>
+  <div class="tab" onclick="switchTab('zonalfr')">ZONAL FR Review</div>
+</div>
+<div class="bi-view-panel" id="biViewPanel" hidden></div>
+<div class="tab-content" id="tab-zonalfr"><nav class="fr-page-tabs" aria-label="Zonal FR pages"><button type="button" data-fr-page="review" onclick="selectFRPage('review')">Review</button><button type="button" data-fr-page="monitor" onclick="selectFRPage('monitor')">Expenditure Monitoring</button><button type="button" data-fr-page="insight" onclick="selectFRPage('insight')">AI Insight</button></nav><div class="fr-toolbar"><label for="frReviewView">Review view</label><select id="frReviewView" onchange="changeFRReview()" aria-label="Zonal financial review view"></select><label for="frMonitoringType">Expenditure Monitoring</label><select id="frMonitoringType" onchange="changeMonitoring()"><option value="">Review views</option><option value="pu">PU-wise comparison</option><option value="dept">Department-wise comparison</option><option value="demand">Demand-wise comparison</option><option value="month">Month-wise comparison</option></select><label for="frInsightType">AI Insight</label><select id="frInsightType" onchange="renderZonalFR()"><option value="">Select analysis</option><option value="all">All insights</option><option value="alert">Alerts</option><option value="lookout">Look out</option><option value="monitoring">Monitoring</option><option value="comment">AI comments / insights</option></select><span>SEP 2026 · FY 2026–27</span></div><div id="frMonitoringControls" class="fr-monitor-controls" hidden><label>Compare <select id="frCompareGroup" onchange="changeMonitoring()"><option value="zone">Zone only</option><option value="all">All AUs</option><option value="selected">Selected AUs</option><option value="zoneSelected">Zone + selected AUs</option></select></label><span id="frComparePair" hidden style="display:none"><label>First scope <select id="frCompareA" onchange="changeMonitoring()"></select></label><label>Second scope <select id="frCompareB" onchange="changeMonitoring()"></select></label></span><label id="frAUChoices" hidden>Select AUs<select id="frSelectedAUs" multiple size="4" onchange="changeMonitoring()"></select></label><label>Select PU / Department / Demand / Month<select id="frCompareMetric" multiple size="4" onchange="changeMonitoring()"><option value="all">All heads</option></select></label></div><p class="fr-util-legend"><span class="fr-green">Green ≤50%</span><span class="fr-yellow">Yellow >50–100%</span><span class="fr-red">Red >100%</span> Annual budget utilisation through September</p><h2 class="fr-title" id="frReviewHeading">ZONAL FR Review — SEP 2026</h2><p class="fr-basis" id="frReviewBasis"></p><div id="frReviewContent"></div><section id="frInsightPanel" class="fr-insight-panel" hidden></section><p class="fr-notes" id="frReviewNotes"></p></div>
+<!-- TAB: SUMMARY -->
+<div class="tab-content" id="tab-summary">
+  <div class="summary-page">
+    <div class="summary-head">
+      <div>
+        <div class="summary-title">Executive Summary</div>
+        <div class="summary-sub" id="summaryMeta">Main budget, liability, utilisation and action points in one page.</div>
+      </div>
+      <button class="summary-open-main" type="button" onclick="switchTab('liability')">Open Main Report</button>
+    </div>
+    <div class="summary-main-grid" id="summaryMainPoints"></div>
+    <div class="risk-spotlight summary-risk-spotlight" id="riskSpotlight">
+      <span class="risk-title">Risk Spotlight</span>
+      <div class="risk-items" id="riskItems"></div>
+    </div>
+    <div class="cards summary-cards" id="summaryPageCards"></div>
+    <div class="summary-section">
+      <div class="summary-section-title"><span id="summaryCurMonLabel">Current Month</span> - Highest Utilised PU Progress</div>
+      <div class="prog-grid" id="summaryPageBars"></div>
+    </div>
+    <div class="summary-section">
+      <div class="summary-section-title">Budget Notes</div>
+      <div class="summary-note" id="summaryPageNote"></div>
+    </div>
+  </div>
+</div>
+<!-- TAB: LIABILITY -->
+<div class="tab-content active" id="tab-liability">
+  <div class="twrap">
+    <div class="thead-bar">
+      <span class="ttitle">PU-wise Ordinary Working Expenses Statement - FY 2026-27</span>
+      <div class="legend">
+        <div class="leg-item"><div class="leg-box cs"></div>Staff PU / Committed</div>
+        <div class="leg-item"><div class="leg-box co"></div>Other Committed</div>
+        <div class="leg-item"><div class="leg-box pl"></div>Planned</div>
+      </div>
+    </div>
+    <table class="pu-master-table">
+      <thead id="liab-thead">
+        <tr>
+          <th class="la" rowspan="2">PU</th>
+          <th class="la" rowspan="2" style="min-width:160px">Description</th>
+          <th class="la" rowspan="2">PU Type</th>
+          <th class="la" rowspan="2">Liability</th>
+          <th rowspan="2">Budget<br>(Rs'000s)</th>
+          <th class="sub" colspan="1">APR 2026</th>
+          <th class="sub" colspan="1">MAY 2026</th>
+          <th class="sub" colspan="4" id="curMonHdr" style="background:rgba(244,169,50,.15)">JUN 2026 - Till Date Exp + Remaining</th>
+          <th rowspan="2">Total Committed<br>(Rs'000s)</th>
+          <th rowspan="2">Balance Budget<br>(Rs'000s)</th>
+          <th rowspan="2">Proj./Month<br>Jul-Mar (Rs'000s)</th>
+          <th rowspan="2">% Utilised</th>
+          <th rowspan="2">Status</th>
+        </tr>
+        <tr>
+          <th class="sub" style="min-width:90px">APR Actual<br>(Rs'000s)</th>
+          <th class="sub" style="min-width:90px">MAY Actual<br>(Rs'000s)</th>
+          <th class="sub" style="min-width:100px">JUN till date exp<br>(Rs'000s)</th>
+          <th class="sub" style="min-width:90px">JUN<br>Remaining</th>
+          <th class="sub" style="min-width:90px">JUN Total<br>(Rs'000s)</th>
+          <th class="sub">% Done</th>
+        </tr>
+      </thead>
+      <tbody id="liab-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TAB: MONTH WISE -->
+<div class="tab-content" id="tab-monthwise">
+  <div class="twrap">
+    <div class="thead-bar">
+      <span class="ttitle">Month-wise Actuals + Projected Liability - FY 2026-27</span>
+      <div class="legend">
+        <div class="leg-item" style="background:#E8F5FF;padding:2px 6px;border-radius:3px">Blue = Projected</div>
+        <div class="leg-item" style="background:#FFF9E6;padding:2px 6px;border-radius:3px">Yellow = Current Month</div>
+      </div>
+    </div>
+    <table>
+      <thead id="mw-thead">
+        <tr>
+          <th class="la" style="min-width:40px">PU</th>
+          <th class="la" style="min-width:160px">Description</th>
+          <th>APR<br>Actual</th><th>MAY<br>Actual</th>
+          <th id="mw-curmon-hdr" style="background:#7A5A00;color:#FFF9E0">JUN till<br>date exp</th>
+          <th id="mw-curmon-rem" style="background:#7A5A00;color:#FFF9E0">JUN<br>Remaining</th>
+          <th id="mw-curmon-tot" style="background:#7A5A00;color:#FFF9E0">JUN<br>Total</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">JUL<br>Projected</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">AUG<br>Projected</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">SEP<br>Projected</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">OCT<br>Projected</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">NOV<br>Projected</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">DEC<br>Projected</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">JAN<br>Projected</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">FEB<br>Projected</th>
+          <th style="background:#1A3A6A;color:#DDEEFF">MAR<br>Projected</th>
+          <th>Budget<br>(Rs'000s)</th>
+          <th>Committed<br>Till Date</th>
+          <th>Balance<br>Budget</th>
+          <th>%<br>Used</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="mw-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- TAB: PU MASTER -->
+<div class="tab-content" id="tab-pumaster">
+  <div class="pu-master-wrap">
+    <div class="pu-master-head">
+      <div>
+        <div class="pu-master-title">PU Master &amp; Status</div>
+        <div class="pu-master-sub">Primary Unit reference with budget, actual, balance, utilisation and quick drill-down actions.</div>
+      </div>
+      <div class="pu-master-toggle" role="group" aria-label="PU Master view">
+        <button type="button" class="active" id="puCardViewBtn" onclick="setPUMasterView('card')">Card View</button>
+        <button type="button" id="puTableViewBtn" onclick="setPUMasterView('table')">Table View</button>
+      </div>
+    </div>
+    <div class="pu-master-kpis" id="puMasterKpis"></div>
+    <div class="pu-master-filters">
+      <select id="puMasterTypeFilter" onchange="renderPUMaster()"><option value="all">All PU Types</option></select>
+      <select id="puMasterLiabFilter" onchange="renderPUMaster()"><option value="all">All Liability Types</option></select>
+      <select id="puMasterBudgetFilter" onchange="renderPUMaster()">
+        <option value="all">All Budget Status</option>
+        <option value="budget">Budget Available</option>
+        <option value="nobudget">No Budget</option>
+      </select>
+      <select id="puMasterActualFilter" onchange="renderPUMaster()">
+        <option value="all">All Actual Status</option>
+        <option value="actual">Actual Booked</option>
+        <option value="noactual">No Actual</option>
+      </select>
+      <select id="puMasterUtilFilter" onchange="renderPUMaster()">
+        <option value="all">All Utilisation</option>
+        <option value="low">Low &lt; 60%</option>
+        <option value="normal">Normal 60-85%</option>
+        <option value="high">High 85-100%</option>
+        <option value="over">Over 100%</option>
+      </select>
+    </div>
+    <div class="pu-card-grid" id="puMasterCards"></div>
+    <div class="pu-master-table-wrap" id="puMasterTableWrap" style="display:none">
+      <table class="pu-master-table sortable-report">
+        <thead><tr>
+          <th class="la">PU Code</th><th class="la">Description</th>
+          <th class="la">Type of PU</th><th class="la">Type of Liability</th>
+          <th>Budget</th><th>Actual</th><th>Balance</th><th>Utilisation</th><th>Status</th><th>Actions</th>
+        </tr></thead>
+        <tbody id="pu-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- Browser upload UI removed. Use MBRLR Local Sync desktop application. -->
+<div class="tab-content" id="tab-trend">
+  <div style="padding:14px 18px">
+    <div class="trend-ctrl-bar">
+      <span style="color:#C9A84C;font-weight:700;font-size:12px;white-space:nowrap">TREND ANALYSIS GRAPHS</span>
+      <select id="trendPUSelect" class="trend-sel" onchange="renderTrend()" style="min-width:190px">
+        <option value="ALL">All PUs (Aggregate)</option>
+      </select>
+      <label class="trend-tick-link">
+        <input type="checkbox" id="trendUseBPPU" onchange="renderTrend()">
+        Use BP PU ticks
+      </label>
+      <label class="nr-graph-style">Chart style <select id="nrGraphStyle" class="trend-sel" onchange="renderTrend()"><option value="bar">Bar chart</option><option value="line">Line chart</option><option value="heat">Heat map</option></select></label><select id="trendChartType" class="trend-sel" onchange="renderTrend()">
+        <option value="monthly">Monthly Actuals</option>
+        <option value="actualdone">Actual Expenses Done Months</option>
+        <option value="cumulative">Cumulative Spend</option>
+        <option value="yoy">Year-on-Year %</option>
+        <option value="pubar">Top PUs - Budget vs Actuals</option>
+        <option value="utilbar">Utilisation Ranking</option>
+        <option value="riskbar">Budget Pressure Ranking</option>
+        <option value="askbar">Ask / Surrender Projection</option>
+        <option value="noexpense">Budget Available, No Expense</option>
+      </select>
+      <select id="trendTopN" class="trend-sel" onchange="renderTrend()">
+        <option value="10">Top 10 PUs</option>
+        <option value="15">Top 15 PUs</option>
+        <option value="999">All PUs</option>
+      </select>
+      <label style="color:#A8C0D8;font-size:10px;display:flex;align-items:center;gap:5px;white-space:nowrap">
+        <input type="checkbox" id="trendShowPY" checked onchange="renderTrend()" style="accent-color:#C9A84C"> PY 2025-26
+      </label>
+      <span id="trendDataNote" style="color:#A8C0D8;font-size:9px;margin-left:auto;white-space:nowrap"></span>
+    </div>
+
+    <div id="trendKPIStrip" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px"></div>
+
+    <div class="trend-chart-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="tchart-wrap" style="grid-column:1/-1">
+        <div class="tchart-title" id="mainChartTitle">Monthly Actuals Trend</div>
+        <canvas id="trendMainChart" height="80"></canvas>
+      </div>
+      <div class="tchart-wrap">
+        <div class="tchart-title">Top PUs by Budget Used (%)</div>
+        <canvas id="trendUtilChart" height="200"></canvas>
+      </div>
+      <div class="tchart-wrap" style="grid-column:1/-1">
+        <div class="tchart-title">Largest PU Spending - Budget vs Actuals</div>
+        <canvas id="trendTopPUChart" height="80"></canvas>
+      </div>
+      <div class="tchart-wrap">
+        <div class="tchart-title">Month-wise Spending Heatmap (Cr)</div>
+        <div id="trendHeatmap"></div>
+      </div>
+      <div class="tchart-wrap">
+        <div class="tchart-title">Important PUs - CY vs PY</div>
+        <canvas id="trendFocusChart" height="200"></canvas>
+      </div>
+      <div class="tchart-wrap">
+        <div class="tchart-title">Budget Pressure - Over Budget / No Expense</div>
+        <canvas id="trendRiskChart" height="200"></canvas>
+      </div>
+      <div class="tchart-wrap">
+        <div class="tchart-title">Budget Control - Ask vs Surrender</div>
+        <canvas id="trendControlChart" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-aitrend">
+  <div class="ai-summary-wrap">
+    <div class="ai-summary-head">
+      <div>
+        <div class="ai-summary-title">AI Trend Analysis Summary</div>
+        <div class="ai-summary-sub" id="aiTrendMeta">PU-wise current year, previous year and projection risk summary, excluding Staff PU committed liability</div>
+      </div>
+      <select class="trend-sel" id="aiTrendScope" onchange="renderAITrendSummary()">
+        <option value="priority">Priority PUs</option>
+        <option value="all">All PUs</option>
+        <option value="over">Overspent / High Risk</option>
+      </select>
+      <div class="ai-summary-expand-actions">
+        <button type="button" onclick="setAISummaryExpanded(true)">Expand all</button>
+        <button type="button" onclick="setAISummaryExpanded(false)">Collapse all</button>
+      </div>
+    </div>
+    <div id="aiTrendSummary" class="ai-summary-list"></div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-bpanalysis">
+  <div class="bp-wrap">
+    <div class="bp-head">
+      <div>
+        <div class="bp-title">Budget Proportionate Analysis</div>
+        <div class="bp-sub" id="bpMeta">BP = Budget Grant / 12 x completed actual months. Current running month is not counted.</div>
+      </div>
+      <div class="bp-mode-pack">
+        <div class="bp-formula">BP = BG / 12 x Completed Months</div>
+        <small data-bp-mode-label>AE up to completed month</small>
+      </div>
+    </div>
+
+    <div class="bp-filter-panel">
+      <div class="bp-filter-title">Report Filters</div>
+      <div class="bp-filter-grid">
+        <div class="bp-pu-filter">
+          <div class="bp-filter-label">PU Selection</div>
+          <details class="bp-pu-drawer" id="bpPUDrawer">
+            <summary>
+              <span>PU Ticks</span>
+              <strong id="bpPUCount">All selected</strong>
+            </summary>
+            <div class="bp-drawer-panel">
+              <div class="bp-check-head">
+                <label class="bp-check-all">
+                  <input type="checkbox" id="bpPUAll" checked onchange="onBPAllToggle(this.checked)">
+                  <span>All PUs</span>
+                </label>
+                <span class="bp-count">Multi select</span>
+              </div>
+              <input class="bp-pu-search" id="bpPUSearch" type="search" placeholder="Search PU code or name..." oninput="filterPUChecklist('bpPUFilter', this.value)">
+              <div id="bpPUFilter" class="bp-check-list"></div>
+              <div class="bp-filter-actions">
+                <button type="button" onclick="setBPSelection('all')">Select All</button>
+                <button type="button" onclick="setBPSelection('clear')">Clear PU Selection</button>
+                <button type="button" class="bp-ok-btn" onclick="closePUDrawer('bpPUDrawer')">OK / Close</button>
+              </div>
+            </div>
+          </details>
+        </div>
+        <label>
+          BP Status
+          <select id="bpStatusFilter" class="bp-filter-select" onchange="renderBPAnalysis()">
+            <option value="all">All Status</option>
+            <option value="excess">Excess only</option>
+            <option value="saving">Saving only</option>
+            <option value="overbudget">Over full budget</option>
+            <option value="noexpense">Budget but no expense</option>
+          </select>
+        </label>
+        <label>
+          PU Type
+          <select id="bpTypeFilter" class="bp-filter-select" onchange="renderBPAnalysis()">
+            <option value="all">All PU Types</option>
+            <option value="Staff PU">Staff PU</option>
+            <option value="Non Staff PU">Non Staff PU</option>
+          </select>
+        </label>
+        <label>
+          Liability
+          <select id="bpLiabilityFilter" class="bp-filter-select" onchange="renderBPAnalysis()">
+            <option value="all">All Liability</option>
+            <option value="Committed">Committed</option>
+            <option value="Planned">Planned</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="bp-kpis" id="bpKpis"></div>
+    <div class="bp-table-wrap">
+      <div class="bp-table-title" id="bpTableTitle">PU-wise Budget Proportionate Position</div>
+      <div class="bp-scroll">
+        <table class="bp-table">
+          <thead>
+            <tr>
+              <th>PU</th>
+              <th>Description</th>
+              <th>PU Type</th>
+              <th>Liability</th>
+              <th>Budget Grant</th>
+              <th>Actual Months</th>
+              <th>Budget Proportionate</th>
+              <th>Actual Till Date</th>
+              <th>Excess / Saving</th>
+              <th>Utilisation</th>
+              <th>BP Status</th>
+              <th>Accounts Remark</th>
+            </tr>
+          </thead>
+          <tbody id="bpTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-budgetcontrol">
+  <div class="bc-wrap">
+    <div class="bc-head">
+      <div>
+        <div class="bc-title">Indian Railways Budget Control</div>
+        <div class="bc-sub" id="bcMeta">Grant control view for current budget, actual expenditure, saving/excess and next action.</div>
+      </div>
+      <div class="bp-mode-pack compact">
+        <div class="bc-basis" id="bcBasis">BG_ISL Control</div>
+        <small data-bp-mode-label>AE up to completed month</small>
+      </div>
+    </div>
+
+    <div class="bc-kpis" id="bcKpis"></div>
+
+    <div class="bc-filter-panel">
+      <div class="bc-filter-title">Control Filters</div>
+      <div class="bc-filter-grid">
+        <label>
+          Action Status
+          <select id="bcActionFilter" class="bp-filter-select" onchange="renderBudgetControl()">
+            <option value="all">All Action Status</option>
+            <option value="ask">Ask / Additional Grant</option>
+            <option value="surrender">Surrender Review</option>
+            <option value="watch">Watch List</option>
+            <option value="noexpense">Budget but No Expense</option>
+            <option value="normal">Normal Control</option>
+          </select>
+        </label>
+        <label>
+          PU Type
+          <select id="bcTypeFilter" class="bp-filter-select" onchange="renderBudgetControl()">
+            <option value="all">All PU Types</option>
+            <option value="Staff PU">Staff PU</option>
+            <option value="Non Staff PU">Non Staff PU</option>
+          </select>
+        </label>
+        <label>
+          Liability
+          <select id="bcLiabilityFilter" class="bp-filter-select" onchange="renderBudgetControl()">
+            <option value="all">All Liability</option>
+            <option value="Committed">Committed</option>
+            <option value="Planned">Planned</option>
+          </select>
+        </label>
+        <label>
+          Minimum Impact
+          <select id="bcImpactFilter" class="bp-filter-select" onchange="renderBudgetControl()">
+            <option value="all">All Impact</option>
+            <option value="25">Above Rs 25 Lakh</option>
+            <option value="100">Above Rs 1 Cr</option>
+            <option value="500">Above Rs 5 Cr</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="bc-action-grid" id="bcActionGrid"></div>
+
+    <div class="bc-table-wrap">
+      <div class="bc-table-title" id="bcTableTitle">PU-wise Budget Control Register</div>
+      <div class="bc-scroll">
+        <table class="bc-table">
+          <thead>
+            <tr>
+              <th>PU</th>
+              <th>Description</th>
+              <th>Projected Requirement</th>
+              <th>Amount to Ask</th>
+              <th>Possible Surrender</th>
+              <th>Suggested Stage</th>
+              <th>Utilisation</th>
+              <th>Control Status</th>
+              <th>Budget Control Remark</th>
+            </tr>
+          </thead>
+          <tbody id="bcTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-excessshortfall">
+  <div class="xs-wrap">
+    <div class="xs-head">
+      <div>
+        <div class="xs-title" id="xsTitle">Primary Unit Wise Statement of Excess Expenditure over Budget Proportionate up to Aug 2026 (Fig. Rs. in crores / Rs '000)</div>
+        <div class="xs-sub" id="xsMeta">Actual values calculated from the current portal datasets in both crore and Rs '000.</div>
+      </div>
+      <div class="xs-controls">
+        <select id="xsScope" onchange="renderExcessShortfall()">
+          <option value="all">All PUs</option>
+          <option value="hq">HQ PU List Only</option>
+        </select>
+        <select id="xsSort" onchange="renderExcessShortfall()">
+          <option value="hq">HQ Custom Order</option>
+          <option value="code">PU Code</option>
+          <option value="excess">Highest Aug Excess</option>
+          <option value="actual">Highest Aug Actual</option>
+          <option value="budget">Highest Budget</option>
+        </select>
+      </div>
+    </div>
+    <div class="xs-kpis" id="xsKpis"></div>
+    <div class="xs-scroll">
+      <table class="xs-table">
+        <thead id="xsTableHead"></thead>
+        <tbody id="xsTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-smhdetail">
+  <div class="smh-wrap">
+    <div class="smh-head">
+      <div>
+        <div class="smh-title">Department > SMH > Primary Unit Analysis</div>
+        <div class="smh-sub">Current year detailed budget vs actual expenditure, excluding Department 00 and PU-98 recoveries</div>
+      </div>
+      <div class="smh-controls">
+        <select class="trend-sel" id="smhDeptFilter" onchange="renderSMHDetail()">
+          <option value="all">All Departments</option>
+        </select>
+        <select class="trend-sel" id="smhCodeFilter" onchange="renderSMHDetail()">
+          <option value="all">All Demand</option>
+        </select>
+        <details class="bp-pu-drawer smh-pu-drawer" id="smhPUDrawer">
+          <summary><span>PU Selection</span><strong id="smhPUCount">All selected</strong></summary>
+          <div class="bp-drawer-panel">
+            <div class="bp-check-head">
+              <label class="bp-check-all">
+                <input type="checkbox" id="smhPUAll" checked onchange="onSMHPUAllToggle(this.checked)">
+                <span>All PUs</span>
+              </label>
+              <span class="bp-count" id="smhPUCountInline">All selected</span>
+            </div>
+            <input class="bp-pu-search" id="smhPUSearch" type="search" placeholder="Search PU code or name..." oninput="filterPUChecklist('smhPUFilter', this.value)">
+            <div class="bp-check-list" id="smhPUFilter"></div>
+            <div class="bp-filter-actions">
+              <button type="button" onclick="setSMHPUSelection('all')">Select All</button>
+              <button type="button" onclick="setSMHPUSelection('clear')">Clear PU Selection</button>
+              <button type="button" class="bp-ok-btn" onclick="closePUDrawer('smhPUDrawer')">OK / Close</button>
+            </div>
+          </div>
+        </details>
+        <select class="trend-sel" id="smhViewMode" onchange="renderSMHDetail()">
+          <option value="report">Report Format</option>
+          <option value="dept">Department Summary</option>
+          <option value="smh">Demand wise Summary</option>
+          <option value="pu">PU Detail</option>
+        </select>
+      </div>
+    </div>
+    <div class="smh-kpis" id="smhKpis"></div>
+    <div class="smh-table-wrap">
+      <div class="smh-table-title" id="smhTableTitle">Budget vs Expenditure Report</div>
+      <div class="smh-scroll">
+        <table class="smh-table">
+          <thead id="smhDetailHead"></thead>
+          <tbody id="smhDetailBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-demandsmh">
+  <div class="demand-smh-wrap">
+    <div class="demand-smh-head">
+      <div>
+        <div class="demand-smh-title">Demand wise</div>
+        <div class="demand-smh-sub" id="demandSmhMeta">Current year grant summary by Demand and department code mapping.</div>
+      </div>
+      <div class="bp-mode-pack compact demand-mode-pack">
+        <div class="demand-smh-source" id="demandSmhSource">Source: SMH Wise Budget + Demand/SMH Code</div>
+        <small data-bp-mode-label>AE up to completed month</small>
+      </div>
+    </div>
+    <div class="demand-smh-kpis" id="demandSmhKpis"></div>
+    <div class="demand-smh-table-card">
+      <div class="demand-smh-table-title">
+        <span>Demand wise</span>
+        <em>Figures in thousands</em>
+      </div>
+      <div class="demand-smh-scroll">
+        <table class="demand-smh-table">
+          <thead>
+            <tr>
+              <th>Demand wise</th>
+              <th>DEPT</th>
+              <th>OBA</th>
+              <th>BP</th>
+              <th>AE</th>
+              <th>Variation</th>
+              <th>% BP</th>
+              <th>Budget Remaining</th>
+              <th>% OBA Utilized</th>
+            </tr>
+          </thead>
+          <tbody id="demandSmhBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-additionalremarks">
+  <div class="additional-remarks-wrap">
+    <div class="additional-remarks-head">
+      <div>
+        <div class="additional-remarks-title">Additional Remarks</div>
+        <div class="additional-remarks-sub">Source remarks and calculation notes grouped by report page, kept here to keep main pages clean.</div>
+      </div>
+      <div class="additional-remarks-badge">Preview</div>
+    </div>
+    <div class="additional-remarks-grid" id="additionalRemarksGrid"></div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-remarks">
+  <div class="remarks-wrap">
+    <div class="remarks-head">
+      <div>
+        <div class="remarks-title">Remarks / Clarification Register</div>
+        <div class="remarks-sub">Source files, financial years and exclusions currently followed by the portal.</div>
+      </div>
+      <div class="remarks-badge">Official Data Use Note</div>
+    </div>
+    <div class="remarks-grid" id="remarksKpis"></div>
+    <div class="remarks-section">
+      <div class="remarks-section-title">Data Source Being Used</div>
+      <div class="remarks-table-wrap">
+        <table class="remarks-table">
+          <thead><tr><th>Data Area</th><th>Financial Year</th><th>Source / File</th><th>Used In Portal</th><th>Remarks</th></tr></thead>
+          <tbody id="remarksSourceBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="remarks-section">
+      <div class="remarks-section-title">Exclusions and Display Rules</div>
+      <div class="remarks-table-wrap">
+        <table class="remarks-table">
+          <thead><tr><th>Rule</th><th>Codes / Items</th><th>Where Applied</th><th>Clarification</th></tr></thead>
+          <tbody id="remarksRuleBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="remarks-section">
+      <div class="remarks-section-title">Excluded PU Details</div>
+      <div class="remarks-table-wrap">
+        <table class="remarks-table">
+          <thead><tr><th>PU</th><th>Description</th><th>Budget CY</th><th>Actual CY</th><th>Reason</th></tr></thead>
+          <tbody id="remarksPUBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-backup">
+  <div class="backup-wrap">
+    <div class="backup-head">
+      <div>
+        <div class="backup-title">Portal Backup</div>
+        <div class="backup-sub">Admin protected GitHub-ready backup package for the current portal files.</div>
+      </div>
+      <div class="backup-lock">ADMIN ONLY</div>
+    </div>
+    <div class="backup-grid">
+      <div class="backup-card">
+        <span>Backup Scope</span>
+        <strong>GitHub Folder Zip</strong>
+        <p>Includes index, CSS, JavaScript data files and local vendor libraries required for GitHub Pages deployment.</p>
+      </div>
+      <div class="backup-card">
+        <span>Security Note</span>
+        <strong>Password Required</strong>
+        <p>This page opens only after ADMIN password. The backup is created in your browser; no data is sent to any server.</p>
+      </div>
+      <div class="backup-card">
+        <span>Latest Status</span>
+        <strong id="backupStatus">Ready</strong>
+        <p id="backupDetail">Click the button below to create and download a zip backup.</p>
+      </div>
+    </div>
+    <div class="backup-actions">
+      <button type="button" id="downloadBackupBtn">Download Portal Backup ZIP</button>
+      <span id="backupFileList">Files: index.html, assets/css, assets/js, assets/vendor</span>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-dataexport">
+  <div style="padding:24px;background:white;color:#17365D">
+    <h2>Data Export</h2>
+    <p>Download Excel, PDF or PowerPoint for every visible portal report. Page-wise files export one selected page at a time with clean table headers and respective report data.</p>
+    <p>Combined exports are available only under All visible portal pages. Use the highlighted Report / Export selector on any report page for Current Visible View or that page's Full Data Set.</p>
+    <div class="data-export-tabs">
+      <button type="button" class="active" data-export-panel="reports" onclick="showDataExportPanel('reports')">Report exports</button>
+      <button type="button" data-export-panel="history" onclick="showDataExportPanel('history')">History Compare</button>
+    </div>
+    <div class="data-export-panel active" id="dataExportPanelReports">
+      <h3>All visible portal pages</h3>
+      <button onclick="DisplayExport.run('Excel','all',{tableOnly:true})">Combined Excel</button>
+      <button onclick="DisplayExport.run('PDF','all',{tableOnly:true})">Combined PDF</button>
+      <button onclick="DisplayExport.run('PPT','all',{tableOnly:true})">Combined PowerPoint</button>
+      <h3>Page-wise reports</h3>
+      <table style="width:100%;text-align:left"><thead><tr><th>Report page</th><th>Excel</th><th>PDF</th><th>PowerPoint</th></tr></thead><tbody id="displayExportPages"></tbody></table>
+      <h3>Current page full data</h3>
+      <p>Open the required report page and use the highlighted Report / Export selector for that page's Full Data Set. Combined all-page exports are kept only above.</p>
+      <h3>SMH matrix reports</h3>
+      <button onclick="downloadSMHMatrixPDF('dual')">SMH Matrix PDF - Thousands + Crores</button>
+    </div>
+    <div class="data-export-panel" id="dataExportPanelHistory">
+      <h3>History Compare exports</h3>
+      <p>Uses the selected From Sync / To Sync, current search/filter and displayed sorting from History Compare.</p>
+      <div class="history-inline-controls">
+        <label>From Sync <select id="historyExportFrom" onchange="syncHistoryExportSelection('from', this.value)"></select></label>
+        <label>To Sync <select id="historyExportTo" onchange="syncHistoryExportSelection('to', this.value)"></select></label>
+      </div>
+      <button onclick="downloadHistoryCompareExport('Excel')">History Compare Excel</button>
+      <button onclick="downloadHistoryCompareExport('PDF')">History Compare PDF</button>
+      <button onclick="downloadHistoryCompareExport('PPT')">History Compare PowerPoint</button>
+    </div>
+  </div>
+</div>
+<div class="tab-content" id="tab-historycompare">
+  <div class="history-compare-wrap">
+    <div class="history-head">
+      <div>
+        <h2>History Compare</h2>
+        <p>Compare any two local sync snapshots to review PU-wise movement in budget, actual, balance and utilisation.</p>
+      </div>
+      <div class="history-status" id="historyCompareStatus">Loading snapshot index...</div>
+    </div>
+    <div class="history-controls">
+      <label>From Sync <select id="historyFromSync" onchange="renderHistoryCompare()"></select></label>
+      <label>To Sync <select id="historyToSync" onchange="renderHistoryCompare()"></select></label>
+      <label>Filter <input id="historyFilter" type="search" placeholder="PU or description..." oninput="renderHistoryCompareRows()"></label>
+      <button type="button" onclick="renderHistoryCompare()">Refresh compare</button>
+    </div>
+    <div class="history-kpis" id="historyCompareKpis"></div>
+    <div class="history-top-grid">
+      <div><h3>Top budget increases</h3><ol id="historyTopBudgetUp"></ol></div>
+      <div><h3>Top budget decreases</h3><ol id="historyTopBudgetDown"></ol></div>
+      <div><h3>Top actual increases</h3><ol id="historyTopActualUp"></ol></div>
+      <div><h3>Top actual decreases</h3><ol id="historyTopActualDown"></ol></div>
+    </div>
+    <div class="table-wrap history-table-scroll">
+      <table class="report-table history-table sortable-report" id="historyCompareTable">
+        <thead><tr>
+          <th>PU</th><th>Description</th><th>From Budget</th><th>To Budget</th><th>Budget Change</th>
+          <th>From Actual</th><th>To Actual</th><th>Actual Change</th>
+          <th>From Balance</th><th>To Balance</th><th>Balance Change</th>
+          <th>From Utilisation %</th><th>To Utilisation %</th><th>Utilisation % Change</th><th>Status</th>
+        </tr></thead>
+        <tbody id="historyCompareBody"><tr><td colspan="15">Load at least two sync snapshots to compare.</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="tab-content" id="tab-admin">
+  <div style="padding:12px"><button onclick="switchTab('remarks')">Sources / Remarks</button> <button onclick="switchTab('backup')">Portal Backup</button></div>
+  <div class="admin-wrap">
+    <div class="admin-head">
+      <div>
+        <div class="admin-title">Portal Admin Design Panel</div>
+        <div class="admin-sub">Admin-only control for headings, report names, filter visibility and font simulation.</div>
+      </div>
+      <div class="admin-lock">ADMIN ONLY</div>
+    </div>
+    <div class="admin-note">Portal data upload is disabled in HTML. Use <strong>MBRLR Local Sync</strong> for current-year and previous-year source updates. Browser save here applies design settings only.</div>
+    <div class="admin-page-shortcuts">
+      <button type="button" onclick="switchTab('remarks')"><strong>Remarks / Clarification</strong><span>Sources, exclusions and rules</span></button>
+      <button type="button" disabled><strong>Desktop Sync App</strong><span>Data updates are performed outside the browser</span></button>
+      <button type="button" onclick="switchTab('backup')"><strong>Portal Backup</strong><span>Download GitHub-ready ZIP</span></button>
+    </div>
+    <section class="admin-card division-setup-card">
+      <div class="division-setup-head">
+        <div>
+          <h3>Division Setup Builder</h3>
+          <p>Create a division-wise setup plan, apply portal identity, and download a setup pack for GitHub/Data Upload.</p>
+        </div>
+        <span>Multi-Division Ready</span>
+      </div>
+      <div class="division-setup-grid">
+        <label>Railway
+          <input id="setupRailway" type="text" value="Northern Railway" placeholder="e.g. Northern Railway">
+        </label>
+        <label>Division
+          <input id="setupDivision" type="text" value="NR Zone" placeholder="e.g. Lucknow Division">
+        </label>
+        <label>Financial Year
+          <input id="setupFY" type="text" value="2026-27" placeholder="e.g. 2026-27">
+        </label>
+        <label>Repository / Portal Code
+          <input id="setupRepoCode" type="text" value="MBRLR" placeholder="e.g. LKO-RLP">
+        </label>
+      </div>
+      <div class="division-file-grid">
+        <label><input type="checkbox" data-setup-file="pu-budget" checked> PU Wise Budget Available</label>
+        <label><input type="checkbox" data-setup-file="pu-month" checked> PU Wise Month-wise Actual</label>
+        <label><input type="checkbox" data-setup-file="dept-budget" checked> Department / SMH PU-wise Budget</label>
+        <label><input type="checkbox" data-setup-file="dept-actual" checked> Department / SMH PU-wise Actual</label>
+        <label><input type="checkbox" data-setup-file="demand-budget" checked> Demand / SMH Budget Summary</label>
+        <label><input type="checkbox" data-setup-file="demand-actual" checked> Demand / SMH Actual Summary</label>
+        <label><input type="checkbox" data-setup-file="py-budget" checked> Previous Year PU Budget</label>
+        <label><input type="checkbox" data-setup-file="py-month" checked> Previous Year PU Month-wise Actual</label>
+      </div>
+      <div class="division-setup-output" id="divisionSetupOutput">Enter division details, then apply branding or download setup pack.</div>
+      <div class="division-setup-actions">
+        <button type="button" onclick="applyDivisionSetup()">Apply Division Branding</button>
+        <button type="button" onclick="downloadDivisionSetupPack()">Download Setup Pack</button>
+        <button type="button" onclick="renderDivisionSetupPreview()">Preview Process</button>
+      </div>
+    </section>
+    <div class="admin-grid">
+      <section class="admin-card">
+        <h3>Portal Headings</h3>
+        <label>Header Title <input id="adminHeaderTitle" type="text"></label>
+        <label>Header Subtitle <input id="adminHeaderSub" type="text"></label>
+        <label>Footer Text <input id="adminFooterText" type="text"></label>
+      </section>
+      <section class="admin-card">
+        <h3>Font Simulator</h3>
+        <label>UI Font
+          <select id="adminFontFamily">
+            <option value="Segoe UI, Arial, sans-serif">Segoe UI</option>
+            <option value="Tahoma, Segoe UI, Arial, sans-serif">Tahoma Compact</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Verdana, Arial, sans-serif">Verdana</option>
+          </select>
+        </label>
+        <label>Base Font Size <input id="adminBaseFont" type="range" min="10" max="14" step="0.5"></label>
+        <label>Menu Font Size <input id="adminMenuFont" type="range" min="8" max="12" step="0.5"></label>
+        <label>Table Font Size <input id="adminTableFont" type="range" min="9" max="13" step="0.5"></label>
+      </section>
+      <section class="admin-card admin-filter-card">
+        <h3>Top Filter Visibility</h3>
+        <label><input id="adminShowTypeFilter" type="checkbox"> PU Type Filter</label>
+        <label><input id="adminShowLiabilityFilter" type="checkbox"> Liability Filter</label>
+        <label><input id="adminShowActivityFilter" type="checkbox"> Activity Filter</label>
+        <label><input id="adminShowFocusFilter" type="checkbox"> Important PU Filter</label>
+        <label><input id="adminShowUtilFilter" type="checkbox"> Utilisation Filter</label>
+      </section>
+      <section class="admin-card admin-preview-card">
+        <h3>Live Preview</h3>
+        <div class="admin-preview" id="adminPreview">
+          <div class="admin-preview-head">Ordinary Working Expenses (OWE) Portal</div>
+          <div class="admin-preview-menu"><button>Main Report</button><button>Department wise</button><button>AI Summary</button></div>
+          <table><thead><tr><th>PU</th><th>Description</th><th>Budget</th></tr></thead><tbody><tr><td>32</td><td>Contractual payments</td><td>117,051</td></tr></tbody></table>
+        </div>
+      </section>
+    </div>
+    <section class="admin-card admin-menu-editor">
+      <h3>Report Menu Names</h3>
+      <div class="admin-menu-grid" id="adminMenuEditor"></div>
+    </section>
+    <div class="admin-actions">
+      <button type="button" onclick="saveAdminDesign()">Save & Apply</button>
+      <button type="button" onclick="exportAdminConfig()">Export GitHub Config</button>
+      <button type="button" onclick="resetAdminDesign()">Reset Defaults</button>
+      <span id="adminSaveStatus">Ready</span>
+    </div>
+  </div>
+</div>
+
+<div id="portalFooter" style="text-align:center;padding:10px;font-size:9px;color:var(--muted);border-top:1px solid var(--border)">
+  Ordinary Working Expenses (OWE) PORTAL - NR Zone &nbsp;-&nbsp; Northern Railway &nbsp;-&nbsp; FY 2026-27 &nbsp;-&nbsp; For Official Use Only
+</div>
+
+<script src="assets/js/detail-data.js?v=20261009-py2"></script>
+<script src="assets/js/demand-smh-data.js?v=20261009-py2"></script>
+<script src="assets/js/admin-config.js?v=20261009-py2"></script>
+<script src="assets/vendor/exceljs.min.js"></script>
+<script src="assets/vendor/jspdf.umd.min.js"></script>
+<script src="assets/vendor/jspdf.plugin.autotable.min.js"></script>
+<script src="assets/js/smh-matrix-export.js?v=20261009-py2"></script>
+<script src="assets/vendor/pptxgen.bundle.js"></script>
+<script src="assets/js/display-export.js?v=20261009-py2"></script>
+<script src="assets/js/zone-au-data.js?v=nr-f0deb9a681b0"></script>
+<script src="assets/js/zone-au-py-data.js?v=nr-f0deb9a681b0"></script>
+<script src="assets/js/zone-au-scope.js?v=20261009-py2"></script>
+<script src="assets/js/zonal-fr.js?v=20261009-py2"></script>
+<script src="assets/js/fr-monitoring.js?v=20261009-py2"></script>
+<script src="assets/js/nr-graphs.js?v=20261009-py2"></script>
+<script src="assets/js/fr-enhancements.js?v=20261009-py2"></script>
+<script src="assets/js/nr-year-comparison.js?v=20261009-py2"></script>
+<script src="assets/js/app.js?v=20261009-py2"></script>
+<script>DisplayExport.init();</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "purpose": "Future-ready placeholder for page labels/order. Current HTML/JS remains authoritative until intentionally wired and tested.",
+  "pages": [
+    {"id": "summary", "label": "Summary"},
+    {"id": "liability", "label": "Main Report"},
+    {"id": "smhdetail", "label": "Department wise"},
+    {"id": "demandsmh", "label": "Demand wise"},
+    {"id": "pumaster", "label": "PU Master"},
+    {"id": "monthwise", "label": "Month-wise"},
+    {"id": "bpanalysis", "label": "BP Analysis"},
+    {"id": "budgetcontrol", "label": "Budget Control"},
+    {"id": "excessshortfall", "label": "AE vs BP"},
+    {"id": "trend", "label": "Graphs"},
+    {"id": "aitrend", "label": "AI Summary"},
+    {"id": "dataexport", "label": "Data Export"},
+    {"id": "historycompare", "label": "History Compare"},
+    {"id": "additionalremarks", "label": "Additional Remarks"},
+    {"id": "admin", "label": "Portal Admin", "hidden": true}
+  ]
+}

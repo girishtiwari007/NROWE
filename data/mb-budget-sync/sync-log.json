@@ -1,0 +1,389 @@
+{
+  "ok": true,
+  "generatedAt": "2026-10-09T09:47:52.799Z",
+  "sourceRevision": "f0deb9a681b0",
+  "mode": "nr-zone-local-sync",
+  "scopes": [
+    "03",
+    "0301",
+    "0303",
+    "0304",
+    "0305",
+    "0306",
+    "0307",
+    "0308",
+    "0309",
+    "0311",
+    "0312",
+    "0313",
+    "0318",
+    "0319",
+    "0320",
+    "0322",
+    "0323",
+    "0325",
+    "0327",
+    "0328",
+    "0329",
+    "0330",
+    "0331"
+  ],
+  "warnings": [
+    {
+      "fy": "2026-2027",
+      "scope": "0319",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": []
+    },
+    {
+      "fy": "2026-2027",
+      "scope": "0327",
+      "coverage": [
+        true,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "warnings": []
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0301",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0303",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0304",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0305",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0306",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0307",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0308",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0309",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0311",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0312",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0313",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0318",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0319",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0320",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0322",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0323",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0325",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0327",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0328",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0329",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0330",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    },
+    {
+      "fy": "2025-2026",
+      "scope": "0331",
+      "coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "warnings": [
+        "Source may be truncated at 32768 rows: pu-dept-demand-smh-budget-all div.xls"
+      ]
+    }
+  ]
+}

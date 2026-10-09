@@ -1,0 +1,27 @@
+{
+  "purpose": "Future-ready placeholder for export formatting rules. Current export engine remains authoritative until this file is intentionally wired and tested.",
+  "excel": {
+    "font": "Times New Roman",
+    "minimumFontSize": 10,
+    "borders": "black",
+    "editable": true,
+    "fitColumns": true
+  },
+  "pdf": {
+    "font": "Times New Roman",
+    "minimumFontSize": 10,
+    "pageOrientation": "landscape",
+    "safeMargins": true
+  },
+  "powerPoint": {
+    "editableWherePossible": true,
+    "professionalLayout": true,
+    "avoidCorruption": true
+  },
+  "routing": {
+    "currentVisibleView": "active page visible state only",
+    "pageWise": "one selected page only",
+    "allVisiblePortalPages": "combined all-page export only from Data Export tab",
+    "historyCompare": "selected from/to sync comparison"
+  }
+}

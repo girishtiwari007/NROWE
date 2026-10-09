@@ -1,0 +1,42 @@
+{
+  "currentYear": "2026-2027",
+  "previousYear": "2025-2026",
+  "years": {
+    "2026-2027": {
+      "zone": [
+        "PU-BUDGET NR ZONE.xls",
+        "PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
+        "pu-dept-demand-smh-budget-NR.xls",
+        "pu-dept-demand-smh-actual-NR.xls",
+        "demand-smh-budget-ZONE.xls",
+        "demand-smh-actual-ZONE.xls"
+      ],
+      "au": [
+        "pu-budget - all div.xls",
+        "pu-month-actual -all div.xls",
+        "pu-dept-demand-smh-budget-all div.xls",
+        "pu-dept-demand-smh-actual-all div.xls",
+        "demand-smh-budget -all div.xls",
+        "demand-smh-actual - all div.xls"
+      ]
+    },
+    "2025-2026": {
+      "zone": [
+        "pu-budget-zonal.xls",
+        "pu-budget-actual-zonal.xls",
+        "pu-dept-demand-smh-budget-zonal.xls",
+        "pu-dept-demand-smh-budget-actual-zonal.xls",
+        "demand-smh-budget-zonal.xls",
+        "demand-smh-actual-zonal.xls"
+      ],
+      "au": [
+        "pu-budget-all div.xls",
+        "pu-budget-actual-all div.xls",
+        "pu-dept-demand-smh-budget-all div.xls",
+        "pu-dept-demand-smh-budget-actual-all div.xls",
+        "demand-smh-budget- all div.xls",
+        "demand-smh-actual-all div.xls"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1420 @@
+{
+  "ok": true,
+  "generatedAt": "2026-10-09T09:39:05.635Z",
+  "scopes": 23,
+  "scopeViewChecks": 276,
+  "frViews": 13,
+  "exports": 18,
+  "checks": {
+    "p": {
+      "scope": "03",
+      "type": "scope",
+      "code": "03",
+      "name": "NR Zone — 03",
+      "cyBudget": 242361059,
+      "pyBudget": 245171187,
+      "cyActual": 137339074,
+      "pyActual": 136049941
+    },
+    "cy": 137339074,
+    "py": 136049941,
+    "partial": true
+  },
+  "errors": [],
+  "failures": [],
+  "results": [
+    {
+      "scope": "03",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "03",
+      "tab": "liability",
+      "rows": 50
+    },
+    {
+      "scope": "03",
+      "tab": "smhdetail",
+      "rows": 15
+    },
+    {
+      "scope": "03",
+      "tab": "demandsmh",
+      "rows": 11
+    },
+    {
+      "scope": "03",
+      "tab": "pumaster",
+      "rows": 50
+    },
+    {
+      "scope": "03",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "03",
+      "tab": "bpanalysis",
+      "rows": 50
+    },
+    {
+      "scope": "03",
+      "tab": "budgetcontrol",
+      "rows": 50
+    },
+    {
+      "scope": "03",
+      "tab": "excessshortfall",
+      "rows": 50
+    },
+    {
+      "scope": "03",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "03",
+      "tab": "aitrend",
+      "rows": 42
+    },
+    {
+      "scope": "03",
+      "tab": "historycompare",
+      "rows": 50
+    },
+    {
+      "scope": "0301",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0301",
+      "tab": "liability",
+      "rows": 46
+    },
+    {
+      "scope": "0301",
+      "tab": "smhdetail",
+      "rows": 13
+    },
+    {
+      "scope": "0301",
+      "tab": "demandsmh",
+      "rows": 11
+    },
+    {
+      "scope": "0301",
+      "tab": "pumaster",
+      "rows": 46
+    },
+    {
+      "scope": "0301",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0301",
+      "tab": "bpanalysis",
+      "rows": 46
+    },
+    {
+      "scope": "0301",
+      "tab": "budgetcontrol",
+      "rows": 46
+    },
+    {
+      "scope": "0301",
+      "tab": "excessshortfall",
+      "rows": 46
+    },
+    {
+      "scope": "0301",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0301",
+      "tab": "aitrend",
+      "rows": 38
+    },
+    {
+      "scope": "0301",
+      "tab": "historycompare",
+      "rows": 46
+    },
+    {
+      "scope": "0303",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0303",
+      "tab": "liability",
+      "rows": 46
+    },
+    {
+      "scope": "0303",
+      "tab": "smhdetail",
+      "rows": 11
+    },
+    {
+      "scope": "0303",
+      "tab": "demandsmh",
+      "rows": 11
+    },
+    {
+      "scope": "0303",
+      "tab": "pumaster",
+      "rows": 46
+    },
+    {
+      "scope": "0303",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0303",
+      "tab": "bpanalysis",
+      "rows": 46
+    },
+    {
+      "scope": "0303",
+      "tab": "budgetcontrol",
+      "rows": 46
+    },
+    {
+      "scope": "0303",
+      "tab": "excessshortfall",
+      "rows": 46
+    },
+    {
+      "scope": "0303",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0303",
+      "tab": "aitrend",
+      "rows": 38
+    },
+    {
+      "scope": "0303",
+      "tab": "historycompare",
+      "rows": 46
+    },
+    {
+      "scope": "0304",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0304",
+      "tab": "liability",
+      "rows": 45
+    },
+    {
+      "scope": "0304",
+      "tab": "smhdetail",
+      "rows": 13
+    },
+    {
+      "scope": "0304",
+      "tab": "demandsmh",
+      "rows": 11
+    },
+    {
+      "scope": "0304",
+      "tab": "pumaster",
+      "rows": 45
+    },
+    {
+      "scope": "0304",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0304",
+      "tab": "bpanalysis",
+      "rows": 45
+    },
+    {
+      "scope": "0304",
+      "tab": "budgetcontrol",
+      "rows": 45
+    },
+    {
+      "scope": "0304",
+      "tab": "excessshortfall",
+      "rows": 45
+    },
+    {
+      "scope": "0304",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0304",
+      "tab": "aitrend",
+      "rows": 37
+    },
+    {
+      "scope": "0304",
+      "tab": "historycompare",
+      "rows": 45
+    },
+    {
+      "scope": "0305",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0305",
+      "tab": "liability",
+      "rows": 43
+    },
+    {
+      "scope": "0305",
+      "tab": "smhdetail",
+      "rows": 12
+    },
+    {
+      "scope": "0305",
+      "tab": "demandsmh",
+      "rows": 11
+    },
+    {
+      "scope": "0305",
+      "tab": "pumaster",
+      "rows": 43
+    },
+    {
+      "scope": "0305",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0305",
+      "tab": "bpanalysis",
+      "rows": 43
+    },
+    {
+      "scope": "0305",
+      "tab": "budgetcontrol",
+      "rows": 43
+    },
+    {
+      "scope": "0305",
+      "tab": "excessshortfall",
+      "rows": 43
+    },
+    {
+      "scope": "0305",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0305",
+      "tab": "aitrend",
+      "rows": 35
+    },
+    {
+      "scope": "0305",
+      "tab": "historycompare",
+      "rows": 43
+    },
+    {
+      "scope": "0306",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0306",
+      "tab": "liability",
+      "rows": 42
+    },
+    {
+      "scope": "0306",
+      "tab": "smhdetail",
+      "rows": 12
+    },
+    {
+      "scope": "0306",
+      "tab": "demandsmh",
+      "rows": 11
+    },
+    {
+      "scope": "0306",
+      "tab": "pumaster",
+      "rows": 42
+    },
+    {
+      "scope": "0306",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0306",
+      "tab": "bpanalysis",
+      "rows": 42
+    },
+    {
+      "scope": "0306",
+      "tab": "budgetcontrol",
+      "rows": 42
+    },
+    {
+      "scope": "0306",
+      "tab": "excessshortfall",
+      "rows": 42
+    },
+    {
+      "scope": "0306",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0306",
+      "tab": "aitrend",
+      "rows": 34
+    },
+    {
+      "scope": "0306",
+      "tab": "historycompare",
+      "rows": 42
+    },
+    {
+      "scope": "0307",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0307",
+      "tab": "liability",
+      "rows": 41
+    },
+    {
+      "scope": "0307",
+      "tab": "smhdetail",
+      "rows": 12
+    },
+    {
+      "scope": "0307",
+      "tab": "demandsmh",
+      "rows": 11
+    },
+    {
+      "scope": "0307",
+      "tab": "pumaster",
+      "rows": 41
+    },
+    {
+      "scope": "0307",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0307",
+      "tab": "bpanalysis",
+      "rows": 41
+    },
+    {
+      "scope": "0307",
+      "tab": "budgetcontrol",
+      "rows": 41
+    },
+    {
+      "scope": "0307",
+      "tab": "excessshortfall",
+      "rows": 41
+    },
+    {
+      "scope": "0307",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0307",
+      "tab": "aitrend",
+      "rows": 33
+    },
+    {
+      "scope": "0307",
+      "tab": "historycompare",
+      "rows": 41
+    },
+    {
+      "scope": "0308",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0308",
+      "tab": "liability",
+      "rows": 34
+    },
+    {
+      "scope": "0308",
+      "tab": "smhdetail",
+      "rows": 6
+    },
+    {
+      "scope": "0308",
+      "tab": "demandsmh",
+      "rows": 8
+    },
+    {
+      "scope": "0308",
+      "tab": "pumaster",
+      "rows": 34
+    },
+    {
+      "scope": "0308",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0308",
+      "tab": "bpanalysis",
+      "rows": 34
+    },
+    {
+      "scope": "0308",
+      "tab": "budgetcontrol",
+      "rows": 34
+    },
+    {
+      "scope": "0308",
+      "tab": "excessshortfall",
+      "rows": 34
+    },
+    {
+      "scope": "0308",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0308",
+      "tab": "aitrend",
+      "rows": 26
+    },
+    {
+      "scope": "0308",
+      "tab": "historycompare",
+      "rows": 34
+    },
+    {
+      "scope": "0309",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0309",
+      "tab": "liability",
+      "rows": 31
+    },
+    {
+      "scope": "0309",
+      "tab": "smhdetail",
+      "rows": 7
+    },
+    {
+      "scope": "0309",
+      "tab": "demandsmh",
+      "rows": 9
+    },
+    {
+      "scope": "0309",
+      "tab": "pumaster",
+      "rows": 31
+    },
+    {
+      "scope": "0309",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0309",
+      "tab": "bpanalysis",
+      "rows": 31
+    },
+    {
+      "scope": "0309",
+      "tab": "budgetcontrol",
+      "rows": 31
+    },
+    {
+      "scope": "0309",
+      "tab": "excessshortfall",
+      "rows": 31
+    },
+    {
+      "scope": "0309",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0309",
+      "tab": "aitrend",
+      "rows": 23
+    },
+    {
+      "scope": "0309",
+      "tab": "historycompare",
+      "rows": 31
+    },
+    {
+      "scope": "0311",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0311",
+      "tab": "liability",
+      "rows": 40
+    },
+    {
+      "scope": "0311",
+      "tab": "smhdetail",
+      "rows": 8
+    },
+    {
+      "scope": "0311",
+      "tab": "demandsmh",
+      "rows": 9
+    },
+    {
+      "scope": "0311",
+      "tab": "pumaster",
+      "rows": 40
+    },
+    {
+      "scope": "0311",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0311",
+      "tab": "bpanalysis",
+      "rows": 40
+    },
+    {
+      "scope": "0311",
+      "tab": "budgetcontrol",
+      "rows": 40
+    },
+    {
+      "scope": "0311",
+      "tab": "excessshortfall",
+      "rows": 40
+    },
+    {
+      "scope": "0311",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0311",
+      "tab": "aitrend",
+      "rows": 32
+    },
+    {
+      "scope": "0311",
+      "tab": "historycompare",
+      "rows": 40
+    },
+    {
+      "scope": "0312",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0312",
+      "tab": "liability",
+      "rows": 23
+    },
+    {
+      "scope": "0312",
+      "tab": "smhdetail",
+      "rows": 4
+    },
+    {
+      "scope": "0312",
+      "tab": "demandsmh",
+      "rows": 5
+    },
+    {
+      "scope": "0312",
+      "tab": "pumaster",
+      "rows": 23
+    },
+    {
+      "scope": "0312",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0312",
+      "tab": "bpanalysis",
+      "rows": 23
+    },
+    {
+      "scope": "0312",
+      "tab": "budgetcontrol",
+      "rows": 23
+    },
+    {
+      "scope": "0312",
+      "tab": "excessshortfall",
+      "rows": 23
+    },
+    {
+      "scope": "0312",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0312",
+      "tab": "aitrend",
+      "rows": 15
+    },
+    {
+      "scope": "0312",
+      "tab": "historycompare",
+      "rows": 23
+    },
+    {
+      "scope": "0313",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0313",
+      "tab": "liability",
+      "rows": 35
+    },
+    {
+      "scope": "0313",
+      "tab": "smhdetail",
+      "rows": 8
+    },
+    {
+      "scope": "0313",
+      "tab": "demandsmh",
+      "rows": 9
+    },
+    {
+      "scope": "0313",
+      "tab": "pumaster",
+      "rows": 35
+    },
+    {
+      "scope": "0313",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0313",
+      "tab": "bpanalysis",
+      "rows": 35
+    },
+    {
+      "scope": "0313",
+      "tab": "budgetcontrol",
+      "rows": 35
+    },
+    {
+      "scope": "0313",
+      "tab": "excessshortfall",
+      "rows": 35
+    },
+    {
+      "scope": "0313",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0313",
+      "tab": "aitrend",
+      "rows": 27
+    },
+    {
+      "scope": "0313",
+      "tab": "historycompare",
+      "rows": 35
+    },
+    {
+      "scope": "0318",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0318",
+      "tab": "liability",
+      "rows": 7
+    },
+    {
+      "scope": "0318",
+      "tab": "smhdetail",
+      "rows": 7
+    },
+    {
+      "scope": "0318",
+      "tab": "demandsmh",
+      "rows": 4
+    },
+    {
+      "scope": "0318",
+      "tab": "pumaster",
+      "rows": 7
+    },
+    {
+      "scope": "0318",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0318",
+      "tab": "bpanalysis",
+      "rows": 7
+    },
+    {
+      "scope": "0318",
+      "tab": "budgetcontrol",
+      "rows": 7
+    },
+    {
+      "scope": "0318",
+      "tab": "excessshortfall",
+      "rows": 7
+    },
+    {
+      "scope": "0318",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0318",
+      "tab": "aitrend",
+      "rows": 3
+    },
+    {
+      "scope": "0318",
+      "tab": "historycompare",
+      "rows": 7
+    },
+    {
+      "scope": "0319",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0319",
+      "tab": "liability",
+      "rows": 7
+    },
+    {
+      "scope": "0319",
+      "tab": "smhdetail",
+      "rows": 1
+    },
+    {
+      "scope": "0319",
+      "tab": "demandsmh",
+      "rows": 4
+    },
+    {
+      "scope": "0319",
+      "tab": "pumaster",
+      "rows": 7
+    },
+    {
+      "scope": "0319",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0319",
+      "tab": "bpanalysis",
+      "rows": 7
+    },
+    {
+      "scope": "0319",
+      "tab": "budgetcontrol",
+      "rows": 7
+    },
+    {
+      "scope": "0319",
+      "tab": "excessshortfall",
+      "rows": 7
+    },
+    {
+      "scope": "0319",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0319",
+      "tab": "aitrend",
+      "rows": 3
+    },
+    {
+      "scope": "0319",
+      "tab": "historycompare",
+      "rows": 7
+    },
+    {
+      "scope": "0320",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0320",
+      "tab": "liability",
+      "rows": 10
+    },
+    {
+      "scope": "0320",
+      "tab": "smhdetail",
+      "rows": 5
+    },
+    {
+      "scope": "0320",
+      "tab": "demandsmh",
+      "rows": 2
+    },
+    {
+      "scope": "0320",
+      "tab": "pumaster",
+      "rows": 10
+    },
+    {
+      "scope": "0320",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0320",
+      "tab": "bpanalysis",
+      "rows": 10
+    },
+    {
+      "scope": "0320",
+      "tab": "budgetcontrol",
+      "rows": 10
+    },
+    {
+      "scope": "0320",
+      "tab": "excessshortfall",
+      "rows": 10
+    },
+    {
+      "scope": "0320",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0320",
+      "tab": "aitrend",
+      "rows": 5
+    },
+    {
+      "scope": "0320",
+      "tab": "historycompare",
+      "rows": 10
+    },
+    {
+      "scope": "0322",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0322",
+      "tab": "liability",
+      "rows": 1
+    },
+    {
+      "scope": "0322",
+      "tab": "smhdetail",
+      "rows": 2
+    },
+    {
+      "scope": "0322",
+      "tab": "demandsmh",
+      "rows": 2
+    },
+    {
+      "scope": "0322",
+      "tab": "pumaster",
+      "rows": 1
+    },
+    {
+      "scope": "0322",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0322",
+      "tab": "bpanalysis",
+      "rows": 1
+    },
+    {
+      "scope": "0322",
+      "tab": "budgetcontrol",
+      "rows": 1
+    },
+    {
+      "scope": "0322",
+      "tab": "excessshortfall",
+      "rows": 1
+    },
+    {
+      "scope": "0322",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0322",
+      "tab": "aitrend",
+      "rows": 1
+    },
+    {
+      "scope": "0322",
+      "tab": "historycompare",
+      "rows": 1
+    },
+    {
+      "scope": "0323",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0323",
+      "tab": "liability",
+      "rows": 19
+    },
+    {
+      "scope": "0323",
+      "tab": "smhdetail",
+      "rows": 4
+    },
+    {
+      "scope": "0323",
+      "tab": "demandsmh",
+      "rows": 2
+    },
+    {
+      "scope": "0323",
+      "tab": "pumaster",
+      "rows": 19
+    },
+    {
+      "scope": "0323",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0323",
+      "tab": "bpanalysis",
+      "rows": 19
+    },
+    {
+      "scope": "0323",
+      "tab": "budgetcontrol",
+      "rows": 19
+    },
+    {
+      "scope": "0323",
+      "tab": "excessshortfall",
+      "rows": 19
+    },
+    {
+      "scope": "0323",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0323",
+      "tab": "aitrend",
+      "rows": 12
+    },
+    {
+      "scope": "0323",
+      "tab": "historycompare",
+      "rows": 19
+    },
+    {
+      "scope": "0325",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0325",
+      "tab": "liability",
+      "rows": 42
+    },
+    {
+      "scope": "0325",
+      "tab": "smhdetail",
+      "rows": 13
+    },
+    {
+      "scope": "0325",
+      "tab": "demandsmh",
+      "rows": 11
+    },
+    {
+      "scope": "0325",
+      "tab": "pumaster",
+      "rows": 42
+    },
+    {
+      "scope": "0325",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0325",
+      "tab": "bpanalysis",
+      "rows": 42
+    },
+    {
+      "scope": "0325",
+      "tab": "budgetcontrol",
+      "rows": 42
+    },
+    {
+      "scope": "0325",
+      "tab": "excessshortfall",
+      "rows": 42
+    },
+    {
+      "scope": "0325",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0325",
+      "tab": "aitrend",
+      "rows": 34
+    },
+    {
+      "scope": "0325",
+      "tab": "historycompare",
+      "rows": 42
+    },
+    {
+      "scope": "0327",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "liability",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "smhdetail",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "demandsmh",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "pumaster",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0327",
+      "tab": "bpanalysis",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "budgetcontrol",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "excessshortfall",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0327",
+      "tab": "aitrend",
+      "rows": 1
+    },
+    {
+      "scope": "0327",
+      "tab": "historycompare",
+      "rows": 1
+    },
+    {
+      "scope": "0328",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0328",
+      "tab": "liability",
+      "rows": 26
+    },
+    {
+      "scope": "0328",
+      "tab": "smhdetail",
+      "rows": 3
+    },
+    {
+      "scope": "0328",
+      "tab": "demandsmh",
+      "rows": 4
+    },
+    {
+      "scope": "0328",
+      "tab": "pumaster",
+      "rows": 26
+    },
+    {
+      "scope": "0328",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0328",
+      "tab": "bpanalysis",
+      "rows": 26
+    },
+    {
+      "scope": "0328",
+      "tab": "budgetcontrol",
+      "rows": 26
+    },
+    {
+      "scope": "0328",
+      "tab": "excessshortfall",
+      "rows": 26
+    },
+    {
+      "scope": "0328",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0328",
+      "tab": "aitrend",
+      "rows": 18
+    },
+    {
+      "scope": "0328",
+      "tab": "historycompare",
+      "rows": 26
+    },
+    {
+      "scope": "0329",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0329",
+      "tab": "liability",
+      "rows": 2
+    },
+    {
+      "scope": "0329",
+      "tab": "smhdetail",
+      "rows": 1
+    },
+    {
+      "scope": "0329",
+      "tab": "demandsmh",
+      "rows": 2
+    },
+    {
+      "scope": "0329",
+      "tab": "pumaster",
+      "rows": 2
+    },
+    {
+      "scope": "0329",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0329",
+      "tab": "bpanalysis",
+      "rows": 2
+    },
+    {
+      "scope": "0329",
+      "tab": "budgetcontrol",
+      "rows": 2
+    },
+    {
+      "scope": "0329",
+      "tab": "excessshortfall",
+      "rows": 2
+    },
+    {
+      "scope": "0329",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0329",
+      "tab": "aitrend",
+      "rows": 1
+    },
+    {
+      "scope": "0329",
+      "tab": "historycompare",
+      "rows": 2
+    },
+    {
+      "scope": "0330",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0330",
+      "tab": "liability",
+      "rows": 1
+    },
+    {
+      "scope": "0330",
+      "tab": "smhdetail",
+      "rows": 4
+    },
+    {
+      "scope": "0330",
+      "tab": "demandsmh",
+      "rows": 1
+    },
+    {
+      "scope": "0330",
+      "tab": "pumaster",
+      "rows": 1
+    },
+    {
+      "scope": "0330",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0330",
+      "tab": "bpanalysis",
+      "rows": 1
+    },
+    {
+      "scope": "0330",
+      "tab": "budgetcontrol",
+      "rows": 1
+    },
+    {
+      "scope": "0330",
+      "tab": "excessshortfall",
+      "rows": 1
+    },
+    {
+      "scope": "0330",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0330",
+      "tab": "aitrend",
+      "rows": 1
+    },
+    {
+      "scope": "0330",
+      "tab": "historycompare",
+      "rows": 1
+    },
+    {
+      "scope": "0331",
+      "tab": "summary",
+      "rows": 1
+    },
+    {
+      "scope": "0331",
+      "tab": "liability",
+      "rows": 3
+    },
+    {
+      "scope": "0331",
+      "tab": "smhdetail",
+      "rows": 4
+    },
+    {
+      "scope": "0331",
+      "tab": "demandsmh",
+      "rows": 2
+    },
+    {
+      "scope": "0331",
+      "tab": "pumaster",
+      "rows": 3
+    },
+    {
+      "scope": "0331",
+      "tab": "monthwise",
+      "rows": 6
+    },
+    {
+      "scope": "0331",
+      "tab": "bpanalysis",
+      "rows": 3
+    },
+    {
+      "scope": "0331",
+      "tab": "budgetcontrol",
+      "rows": 3
+    },
+    {
+      "scope": "0331",
+      "tab": "excessshortfall",
+      "rows": 3
+    },
+    {
+      "scope": "0331",
+      "tab": "trend",
+      "rows": 6
+    },
+    {
+      "scope": "0331",
+      "tab": "aitrend",
+      "rows": 2
+    },
+    {
+      "scope": "0331",
+      "tab": "historycompare",
+      "rows": 3
+    }
+  ],
+  "additionalChecks": {
+    "rgSourceControls": 46,
+    "compactComparisonExports": [
+      "Excel",
+      "PDF",
+      "PPT"
+    ],
+    "compactPPTNativeTables": 8,
+    "utilityPages": true,
+    "missingPreviousYearInputsPreserveBothPayloads": true,
+    "filteredGraphsAndBI": true,
+    "visibleOnlyPageExports": 18
+  }
+}

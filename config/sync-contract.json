@@ -1,0 +1,16 @@
+{
+  "purpose": "Future-ready placeholder describing the standard live data contract for GUI/API/database sync.",
+  "liveOutputs": [
+    "data/live/reports-data.json",
+    "data/live/current-payload.js",
+    "data/live/sync-manifest.json"
+  ],
+  "snapshotRoot": "data/mb-budget-sync/history",
+  "requiredSnapshotFiles": [
+    "reports-data.json",
+    "current_payload.js",
+    "sync-manifest.json",
+    "source-file-hashes.json",
+    "validation-result.json"
+  ]
+}

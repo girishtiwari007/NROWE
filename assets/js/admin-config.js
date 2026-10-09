@@ -1,0 +1,1 @@
+window.PORTAL_ADMIN_CONFIG = window.PORTAL_ADMIN_CONFIG || {};

@@ -1,0 +1,8 @@
+{
+  "purpose": "Future-ready placeholder for configurable financial year and month handling. Current portal logic remains authoritative until this file is intentionally wired and tested.",
+  "financialYear": "2026-27",
+  "yearStartMonth": "APR",
+  "yearEndMonth": "MAR",
+  "completedThrough": null,
+  "runningMonth": null
+}
