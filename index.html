@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="assets/css/executive-portal.css?v=20261009-py2">
 <script src="assets/vendor/xlsx.full.min.js"></script>
 <link rel="stylesheet" href="assets/css/zonal-fr.css?v=20261009-py2">
-<link rel="stylesheet" href="assets/css/nr-filter-controls.css?v=20261113-filter1">
+<link rel="stylesheet" href="assets/css/nr-filter-controls.css?v=20261113-reset1">
 <link rel="stylesheet" href="assets/css/nr-au-views.css?v=20261113-auview1">
 </head>
 <body class="professional-preview">
@@ -86,7 +86,7 @@
     <h1>Ordinary Working Expenses</h1>
     <p>NR Zone · Northern Railway</p>
   </div>
-  <div class="hdr-r">
+  <div class="hdr-r"><button type="button" class="nr-reset-all" id="resetAllSelections" onclick="resetAllPortalSelections()" title="Reset AU, PU and all page filters">Reset All</button><span id="resetAllStatus" role="status" class="nr-reset-status"></span>
     <span class="fy-badge">FY 2026-27</span>
     <span class="as-on" id="asOnLabel">Updated 25-Sep-2026 13:07</span>
   </div>
@@ -1158,10 +1158,11 @@
 <script src="assets/js/zonal-fr.js?v=20261113-filter1"></script>
 <script src="assets/js/fr-monitoring.js?v=20261113-period1"></script>
 <script src="assets/js/nr-graphs.js?v=20261113-filter1"></script>
-<script src="assets/js/fr-enhancements.js?v=20261113-period1"></script>
+<script src="assets/js/fr-enhancements.js?v=20261113-reset1"></script>
 <script src="assets/js/nr-year-comparison.js?v=20261113-filter1"></script>
 <script src="assets/js/app.js?v=20261113-auview1"></script>
 <script src="assets/js/nr-au-views.js?v=20261113-auview1"></script>
+<script src="assets/js/nr-reset-all.js?v=20261113-reset1"></script>
 <script>DisplayExport.init();</script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>

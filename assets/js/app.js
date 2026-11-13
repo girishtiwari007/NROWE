@@ -4081,6 +4081,7 @@ const BACKUP_FILE_LIST = Object.freeze([
   'assets/js/zone-au-scope.js',
   'assets/js/nr-filter-controls.js',
   'assets/js/nr-au-views.js',
+  'assets/js/nr-reset-all.js',
   'assets/css/nr-au-views.css',
   'assets/css/nr-filter-controls.css',
   'assets/js/zonal-fr.js',

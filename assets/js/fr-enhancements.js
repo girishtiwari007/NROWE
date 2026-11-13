@@ -83,6 +83,7 @@
  host.querySelector('.fr-util-legend').hidden=frPage==='insight';
  }
  root.selectFRPage=function(page){frPage=page;const monitor=document.getElementById('frMonitoringType');if(page==='monitor'&&!monitor.value)monitor.value=savedMonitoring;if(page==='insight'&&!document.getElementById('frInsightType').value)document.getElementById('frInsightType').value='alert';if(monitor.value)savedMonitoring=monitor.value;root.renderZonalFR();};
+ root.resetFRSelections=function(){frPage="review";savedMonitoring="pu";Object.keys(graphStates).forEach(key=>delete graphStates[key]);};
  root.renderFRInsights=analysis;
  root.addEventListener('click',e=>{document.querySelectorAll('.fr-check-menu[open]').forEach(d=>{if(!d.contains(e.target))d.open=false;});});
 })(window);

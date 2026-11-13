@@ -1419,5 +1419,13 @@
     "mobile": true,
     "additionalExports": 6,
     "independentFR": true
+  },
+  "resetAllValidation": {
+    "independentFR": true,
+    "zoneAndTableDefaults": true,
+    "crossPageFilters": true,
+    "sourceDataUnchanged": true,
+    "ok": true,
+    "mobile": true
   }
 }
