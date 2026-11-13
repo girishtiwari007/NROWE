@@ -26,7 +26,7 @@
  const actual=m=>total(PERIOD.map(k=>m?.[k]));
  const amount=n=>n==null?'Not supplied':(n/10000).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
  const percentage=(a,b)=>b>0?(100*a/b).toFixed(1)+'%':'n.a.';
- const budget=b=>Number(b?.rg)||Number(b?.bg_isl)||0;
+ const budget=b=>b?.rg_available===true?(Number(b.rg)||0):Number(b?.rg)||Number(b?.bg_isl)||0;
  function demandRows(scope){return scope.demand.rows.filter(r=>r.smh!=='10N').map(r=>({code:r.demand,name:DEMANDS[Number(r.demand)-3]||r.description,budget:r.oba,actual:actual(r.months)}));}
  function metrics(scope){const r=demandRows(scope);return {budget:total(r.map(r=>r.budget)),actual:total(r.map(r=>r.actual))};}
  function table(headers,rows,title){return `<div class="fr-table-block"><h3>${escape(title)}</h3><div class="fr-scroll"><table class="fr-table"><thead><tr>${headers.map(h=>`<th>${escape(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((v,i)=>`<td class="${i>1?'fr-number':''}">${escape(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`;}
@@ -41,7 +41,7 @@
   const host=document.getElementById('frReviewContent');if(!host||!root.NR_ZONE_DATA)return;initialize();
   const select=document.getElementById('frReviewView');let view=select.value;
   if(view.startsWith('au:')&&view.slice(3)!==root.NR_SELECTED_SCOPE.code){view='selected';select.value=view;}
-  const scopes=NR_ZONE_DATA.scopes,zone=scopes['03'],current=scopes[root.NR_SELECTED_SCOPE?.code||'03'];
+  const scopes=NR_ZONE_DATA.scopes,zone=scopes['03'],current=root.NR_SELECTED_SCOPE||scopes['03'];
   if(current.code!=='03'&&['overview','demand','divisions','controlled'].includes(view)){view='selected';select.value=view;}
   const scope=['overview','demand','divisions','controlled'].includes(view)?zone:current;
   const m=metrics(scope),suspense=scope.demand.rows.find(r=>r.smh==='10N');
@@ -73,7 +73,7 @@
   }
   const title=select.options[select.selectedIndex].textContent;
   document.getElementById('frReviewHeading').textContent=title+root.NR_FR_PERIOD.label(' — SEP 2026');
-  document.getElementById('frReviewBasis').textContent=scope.label+root.NR_FR_PERIOD.label(' | FY 2026–27 | Actuals: 1 Apr–30 Sep 2026 | ₹ crore | October excluded');
+  document.getElementById('frReviewBasis').textContent=scope.label+root.NR_FR_PERIOD.label(' | FY 2026–27 | Actuals: 1 Apr–30 Sep 2026 | ₹ crore | October excluded')+(scope.coverage.includes(false)?' | Partial source coverage: '+document.getElementById('nrScopeStatus').textContent:'');
   host.innerHTML='<div class="fr-kpis"><div><span>Annual OWE budget</span><strong>'+amount(m.budget)+root.NR_FR_PERIOD.label(' Cr</strong></div><div><span>Actual through September</span><strong>')+amount(m.actual)+' Cr</strong></div><div><span>Budget utilised</span><strong>'+percentage(m.actual,m.budget)+root.NR_FR_PERIOD.label('</strong></div><div><span>Actual − 50% benchmark</span><strong>')+amount(m.actual-m.budget*phase)+' Cr</strong></div></div>'+content;
   const footer=document.getElementById('frReviewNotes');footer.textContent=root.NR_FR_PERIOD.label('Basis: Demands 03–13; Suspense 12N/10N is separate. FR views use all relevant heads independently of the main PU display filters. Annual budget uses RG where allotted, otherwise BG_ISL. 50% is an even-phasing review benchmark, not the source-file BP. Reference: PFA FR AUG 2026, slides 2 and 5–12; September values come from the local Zone/AU workbooks. Previous-year OWE analysis uses matched April–September 2025 source data; revenue and CAPEX inputs remain pending.');
   if(root.makeReportTablesSortable)makeReportTablesSortable(document.getElementById('tab-zonalfr'));

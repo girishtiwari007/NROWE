@@ -74,6 +74,8 @@
     ['nrScopeFilter','typeFilter','liabFilter','activityFilter','puFocusFilter','utilCompare','utilPctFilter','quickSearch'].forEach(key=>addControl(document.getElementById(key)));
     section?.querySelectorAll('select,input[type="search"],input[type="text"],input[type="number"],input[type="checkbox"],input[type="radio"]').forEach(addControl);
     if(id==='zonalfr'&&document.getElementById('tab-zonalfr').dataset.frPage==='monitor'){for(const key of ['frSelectedAUs','frCompareMetric']){const el=document.getElementById(key);if(el&&((key==='frCompareMetric'&&document.getElementById('frMonitoringType').value)||['selected','zoneSelected'].includes(document.getElementById('frCompareGroup').value)))controls.push(key+': '+Array.from(el.selectedOptions).map(o=>o.textContent).join('; '));}}
+    if(id!=='zonalfr'&&root.NR_FILTERS)controls.push(root.NR_FILTERS.exportSummary());
+    if(id==='zonalfr'&&document.getElementById('tab-zonalfr').dataset.frPage==='review')controls.push('Review AU scope: '+(root.nrSelectedScopeCodes?.()||[]).join(', '));
     const sorts=[];
     section?.querySelectorAll('table').forEach(table=>{
       const active=table.querySelector('th[aria-sort="ascending"],th[aria-sort="descending"],th.sort-asc,th.sort-desc');
@@ -83,7 +85,7 @@
     const completed=bp.bpThrough?`${bp.bpThrough.label} ${bp.bpThrough.year||''}`.trim():'None';
     const running=cur.label?`${cur.label} ${cur.year||''}`.trim():'Not selected';
     const generated=new Date().toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'});
-    return {title:report.title,basis:id==='zonalfr'?'Actuals 1 April–30 September 2026; October excluded; FY 2026–27':`Completed through ${completed}; running month ${running}`,
+    return {title:report.title,basis:id==='zonalfr'?(root.NR_FR_PERIOD?.label('Actuals 1 Apr–30 Sep 2026; October excluded; FY 2026–27')||'Current completed reporting period'):`Completed through ${completed}; running month ${running}`,
       filters:controls.length?controls.join(' | '):'No active filters; all visible rows',
       sort:sorts.length?sorts.join(' | '):'Current displayed order',generated,source:`Source ${audit.id}`,
       period:`${report.title} | ${generated}`};
@@ -123,7 +125,7 @@
     for(const chart of charts) tables.push({title:chart.title+' (chart data)',headers:['Category',...chart.series.map(s=>s.name)],rows:chart.series[0].labels.map((label,i)=>[label,...chart.series.map(s=>s.values[i])])});
     const notes=tableOnly?[]:[...new Set([...section.querySelectorAll('.kpi,.card,.summary-card,.summary-point,.prog-item,.ai-dash-kpi,.bi-kpi,.ai-pu-head,.ai-kpi-row,.ai-bullets,.ai-digest-head,.ai-summary-card,.chart-note,.formula-note,.pu-master-kpi,.pu-card')].filter(visible).map(n=>clean(n.innerText||n.textContent)).filter(Boolean))];
     if(!tables.length && !notes.length) throw new Error('Open '+id+' first and allow its data to finish loading before exporting.');
-    return {id,title:id==='zonalfr'?(document.getElementById('tab-zonalfr').dataset.frPage==='insight'?'AI Insight — SEP 2026':document.getElementById('frReviewHeading')?.textContent||'ZONAL FR Review'):(pages.find(p=>p[0]===id)||[id,id])[1],tables,charts,notes};
+    return {id,title:id==='zonalfr'?(document.getElementById('tab-zonalfr').dataset.frPage==='insight'?('AI Insight — '+(root.NR_FR_PERIOD?.label('SEP 2026')||'Current period')):document.getElementById('frReviewHeading')?.textContent||'ZONAL FR Review'):(pages.find(p=>p[0]===id)||[id,id])[1],tables,charts,notes};
   }
   function bands(table,max=7){
     if(table.headers.length<=max)return [table];

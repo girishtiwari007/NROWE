@@ -934,7 +934,7 @@ function getFiltered() {
   const uc = document.getElementById('utilCompare') ? document.getElementById('utilCompare').value : 'all';
   const uvRaw = document.getElementById('utilPctFilter') ? document.getElementById('utilPctFilter').value : '';
   const uv = uvRaw === '' ? null : Number(uvRaw);
-  return activePUMeta().filter(pu => {
+  const filtered = activePUMeta().filter(pu => {
     if (!passesPUFocus(pu.code)) return false;
     if (tf !== 'all') {
       if (tf === 'Staff'     && pu.puType !== 'Staff PU')     return false;
@@ -950,13 +950,14 @@ function getFiltered() {
     }
     return true;
   });
+  return window.NR_FILTERS ? NR_FILTERS.meta(filtered) : filtered;
 }
 
 // ═══════════════════════════════════════════════
 // SUMMARY CARDS
 // ═══════════════════════════════════════════════
 function renderCards() {
-  const pus = activePUMeta();
+  const pus = getFiltered();
   let totB=0, totC=0, totBal=0;
   pus.forEach(pu => {
     const c = compute(pu.code);
@@ -1038,7 +1039,7 @@ function renderJuneBars() {
   if (el) el.textContent = `${cur.label} ${cur.year} - till date exp`;
 
   let html = '';
-  const showPUs = activePUMeta()
+  const showPUs = getFiltered()
     .map(p => ({p, c:compute(p.code)}))
     .filter(({c}) => c.budget !== 0 || c.totalCommitted !== 0)
     .sort((a,b) => {
@@ -1239,7 +1240,7 @@ function biBars(rows, valueKey, labelFn, noteFn, clsFn) {
 }
 
 function biMonthlyPattern() {
-  const active = activePUMeta();
+  const active = getFiltered();
   const {cur} = getMonthStatus();
   const values = FY_MONTHS.map(m => active.reduce((s, pu) => s + (((MONTH[pu.code] || {})[m]) || 0), 0));
   const max = Math.max(1, ...values);
@@ -1356,7 +1357,7 @@ function biDataForCurrentReport(tab) {
   };
 
   if (tab === 'pumaster') {
-    const meta = activePUMeta();
+    const meta = getFiltered();
     const staff = meta.filter(p => p.puType === 'Staff PU').length;
     const nonStaff = meta.filter(p => p.puType === 'Non Staff PU').length;
     const committed = meta.filter(p => p.liab === 'Committed').length;
@@ -1847,7 +1848,7 @@ function renderRecovery() {
 // ═══════════════════════════════════════════════
 // PU MASTER TABLE
 // ═══════════════════════════════════════════════
-let _puMasterView = 'card';
+let _puMasterView = 'table';
 
 function puDual(value) {
   return `<span class="pu-dual"><span>${fmtT(value)}</span><small>${fmtCr(value)}</small></span>`;
@@ -1891,7 +1892,6 @@ function initPUMasterFilterOptions(pus) {
 }
 
 function renderPUMaster() {
-  initPUMasterViewPreference();
   let pus = getFiltered();
   initPUMasterFilterOptions(activePUMeta());
   const typeFilter = document.getElementById('puMasterTypeFilter')?.value || 'all';
@@ -1916,7 +1916,7 @@ function renderPUMaster() {
     if (utilFilter === 'over' && !(util > 100)) return false;
     return true;
   });
-  const all = activePUMeta();
+  const all = pus;
   const metric = all.reduce((t, pu) => {
     const c = compute(pu.code);
     const budget = Number(c.budget) || 0;
@@ -2091,7 +2091,7 @@ function buildBPRows() {
   const bpMode = getBPModeStatus();
   const actualMonths = bpMode.bpMonths;
   const actualMonthCount = bpMode.bpMonthCount;
-  return activePUMeta().map(pu => {
+  return activePUMeta().filter(pu=>!window.NR_FILTERS||NR_FILTERS.acceptPU(pu.code)).map(pu => {
     const budget = getBudget(pu.code);
     const actualTill = actualForBPMode(pu.code);
     const bp = (budget / 12) * actualMonthCount;
@@ -2117,7 +2117,7 @@ function getFilteredBPRows() {
   const statusFilter = (document.getElementById('bpStatusFilter') || {}).value || 'all';
   const typeFilter = (document.getElementById('bpTypeFilter') || {}).value || 'all';
   const liabilityFilter = (document.getElementById('bpLiabilityFilter') || {}).value || 'all';
-  return buildBPRows().filter(row => {
+  const filtered = buildBPRows().filter(row => {
     if (!passesPUFocus(row.pu.code)) return false;
     if (!selected.includes('all') && selected.length === 0) return false;
     if (!selected.includes('all') && !selected.includes(row.pu.code)) return false;
@@ -2129,6 +2129,7 @@ function getFilteredBPRows() {
     if (statusFilter === 'noexpense' && !row.noExpense) return false;
     return true;
   });
+  return window.NR_FILTERS?NR_FILTERS.puRows(filtered):filtered;
 }
 
 function renderBPAnalysis() {
@@ -2216,7 +2217,7 @@ function buildExcessShortfallRows() {
   const currentMonths = mode.bpMonths.length ? mode.bpMonths : FY_MONTHS.slice(0, 1);
   const previousMonths = currentMonths.slice(0, Math.max(0, currentMonths.length - 1));
   const sumMonths = (source, code, months) => months.reduce((sum, key) => sum + (Number((source[code] || {})[key]) || 0), 0);
-  return PU_META.map(pu => {
+  return PU_META.filter(pu=>!window.NR_FILTERS||NR_FILTERS.acceptPU(pu.code)).map(pu => {
     const budget = getBudget(pu.code);
     const pyAnnual = Number((BUDGET_PY[pu.code] || {}).actuals_till) || 0;
     const bpPrevious = budget / 12 * previousMonths.length;
@@ -2255,7 +2256,7 @@ function getExcessShortfallRows() {
     const bi = b.hqIndex < 0 ? 999 : b.hqIndex;
     return ai - bi || codeSort(a,b);
   });
-  return rows;
+  return window.NR_FILTERS?NR_FILTERS.apply(rows,r=>({...NR_FILTERS.puRecord(r.pu),budget:r.budget,actual:r.actualCurrent,balance:r.budget-r.actualCurrent,util:r.budget?r.actualCurrent/r.budget*100:null})):rows;
 }
 
 function renderExcessShortfall() {
@@ -2299,7 +2300,7 @@ function renderExcessShortfall() {
     [totals.varianceCurrent >= 0 ? 'Net excess over BP' : 'Net shortfall against BP', `${signed(totals.varianceCurrent)} Cr`, 'AE minus BP']
   ].map(([label,value,note]) => `<div><span>${htmlSafe(String(label))}</span><strong>${htmlSafe(String(value))}</strong><small>${htmlSafe(String(note))}</small></div>`).join('');
   const rowCells = r => [
-    'MB', `PU-${r.pu.code} - ${r.pu.desc}`, r.pyAnnual, r.budget, r.bpPrevious, r.bpCurrent,
+    (window.nrSelectedScopeCodes?.()||['03']).join(', '), `PU-${r.pu.code} - ${r.pu.desc}`, r.pyAnnual, r.budget, r.bpPrevious, r.bpCurrent,
     r.pyPrevious, r.actualPrevious, r.pyCurrent, r.actualCurrent, r.budgetVsPY,
     r.variancePrevious, r.varianceCurrent, r.latestMovement, r.remark
   ];
@@ -2384,7 +2385,7 @@ function buildBudgetControlRows() {
   const actualMonths = bpMode.bpMonths;
   const elapsedFactor = Math.max(0.25, bpMode.bpMonthCount || fyElapsedFactor());
   const stage = budgetControlStage();
-  return activePUMeta().map(pu => {
+  return activePUMeta().filter(pu=>!window.NR_FILTERS||NR_FILTERS.acceptPU(pu.code)).map(pu => {
     const ceiling = getBudget(pu.code);
     const actualTill = actualForBPMode(pu.code);
     const projectedRequirement = Math.max(actualTill, elapsedFactor > 0 ? (actualTill / elapsedFactor) * 12 : actualTill);
@@ -2413,7 +2414,7 @@ function getFilteredBudgetControlRows() {
   const liability = (document.getElementById('bcLiabilityFilter') || {}).value || 'all';
   const impact = (document.getElementById('bcImpactFilter') || {}).value || 'all';
   const minImpact = impact === 'all' ? 0 : Number(impact) * 100;
-  return buildBudgetControlRows().filter(row => {
+  const filtered = buildBudgetControlRows().filter(row => {
     if (!passesPUFocus(row.pu.code)) return false;
     if (action !== 'all' && row.key !== action) return false;
     if (type !== 'all' && row.pu.puType !== type) return false;
@@ -2421,6 +2422,7 @@ function getFilteredBudgetControlRows() {
     if (minImpact && Math.max(row.askAmount, row.surrenderAmount) < minImpact) return false;
     return true;
   });
+  return window.NR_FILTERS?NR_FILTERS.puRows(filtered):filtered;
 }
 
 function renderBudgetControl() {
@@ -2619,6 +2621,8 @@ function resetTopFilters() {
     const el = document.getElementById(id);
     if (el) el.value = value;
   });
+  window.NR_FILTERS?.clear();
+  window.NR_FILTERS?.refresh();
 }
 
 function resetTrendFilters() {
@@ -2668,7 +2672,6 @@ function resetBudgetControlFilters() {
 }
 
 function resetFiltersForNavigation() {
-  resetTopFilters();
   resetTrendFilters();
   resetAITrendFilters();
   resetSMHFilters();
@@ -2678,7 +2681,7 @@ function resetFiltersForNavigation() {
 
 function handleTopFilterChange(sourceLabel) {
   const tab = activeTabName();
-  const supported = ['liability','monthwise','pumaster','smhdetail','bpanalysis','budgetcontrol','trend','aitrend','summary'];
+  const supported = ['liability','monthwise','pumaster','smhdetail','bpanalysis','budgetcontrol','trend','aitrend','summary','excessshortfall','historycompare'];
   if (!supported.includes(tab)) {
     resetTopFilters();
     showFilterAlert(`${sourceLabel || 'This filter'} is not used on the current tab. Please use this page's own filters.`);
@@ -3253,6 +3256,7 @@ function currentViewSnapshot() {
   return {
     tab: activeTabName(),
     mode: reportViewMode,
+    nrFilters: window.NR_FILTERS?.snapshot(),
     top:{
       type:(document.getElementById('typeFilter') || {}).value || 'all',
       liab:(document.getElementById('liabFilter') || {}).value || 'all',
@@ -3293,6 +3297,7 @@ function applyViewSnapshot(view) {
   }
   if (view.mode) setReportViewMode(view.mode);
   switchTab(view.tab || 'liability');
+  if(view.nrFilters)window.NR_FILTERS?.restore(view.nrFilters);
   setTimeout(() => {
     renderAll();
     if (view.tab === 'smhdetail') renderSMHDetail();
@@ -3976,7 +3981,7 @@ function switchTab(name) {
     return;
   }
   if (name !== activeTabName() && name !== 'dataexport') resetFiltersForNavigation();
-  if(name==='summary'){setTimeout(renderSummaryPage,80);}
+  if(name==='summary'){setTimeout(()=>{renderCards();renderJuneBars();renderSummaryPage();},80);}
   if(name==='trend'){setTimeout(renderTrend,80);}
   if(name==='aitrend'){setTimeout(renderAITrendSummary,80);}
   if(name==='historycompare'){setTimeout(renderHistoryCompare,80);}
@@ -3994,6 +3999,8 @@ function switchTab(name) {
   document.querySelectorAll('.tab-content').forEach(tc => {
     tc.classList.toggle('active', tc.id==='tab-'+name);
   });
+  window.NR_FILTERS?.sync();
+  if(['summary','liability','monthwise','pumaster','smhdetail','demandsmh','bpanalysis','budgetcontrol','excessshortfall','trend','aitrend','historycompare'].includes(name))setTimeout(renderAll,50);
   updateReportExportMenu(name);
   window.refreshNRYearComparisons?.();
   if(_pp){ _pp.style.opacity='0'; _pp.style.transform='translateY(6px)'; }
@@ -4072,6 +4079,8 @@ const BACKUP_FILE_LIST = Object.freeze([
   'assets/js/zone-au-data.js',
   'assets/js/zone-au-py-data.js',
   'assets/js/zone-au-scope.js',
+  'assets/js/nr-filter-controls.js',
+  'assets/css/nr-filter-controls.css',
   'assets/js/zonal-fr.js',
   'assets/js/fr-monitoring.js',
   'assets/js/fr-enhancements.js',
@@ -4463,7 +4472,7 @@ function buildAITrendItems() {
   const compareMonthKeys = FY_MONTHS.slice(0, actualIdx + 1);
   const compareMonthLabels = FY_MONTH_LABELS.slice(0, actualIdx + 1);
 
-  return PU_META.filter(pu => includeInAITrendSummary(pu) && passesPUFocus(pu.code)).map(pu => {
+  return getFiltered().filter(pu => includeInAITrendSummary(pu) && passesPUFocus(pu.code)).map(pu => {
     const md = MONTH[pu.code] || {};
     const py = MONTH_PY[pu.code] || {};
     const cv = compute(pu.code);
@@ -5097,18 +5106,20 @@ function renderSMHReportRows(rows, monthKeys) {
   const depts = [...new Map(rows.map(r => [r.deptCode + '|' + r.deptName, r])).values()]
     .sort((a,b) => String(a.deptCode).localeCompare(String(b.deptCode), undefined, {numeric:true}));
   let html = '';
+  if(NR_FILTERS.fieldState().sort==='dept'&&NR_FILTERS.fieldState().direction==='desc')depts.reverse();
   depts.forEach(dept => {
     const deptRows = rows.filter(r => r.deptCode === dept.deptCode);
     const deptTotal = makeDetailTotal(deptRows);
     const blankDetailCells = monthKeys.length + 6;
     html += `<tr class="dept-row"><td>${htmlSafe(dept.deptCode)} - ${htmlSafe(dept.deptName)}</td><td></td><td></td>${'<td></td>'.repeat(blankDetailCells)}</tr>`;
     const smhs = [...new Set(deptRows.map(r => r.smh))].sort((a,b) => String(a).localeCompare(String(b), undefined, {numeric:true}));
+    if(NR_FILTERS.fieldState().sort==='demand'&&NR_FILTERS.fieldState().direction==='desc')smhs.reverse();
     smhs.forEach(smh => {
       const smhRows = deptRows.filter(r => r.smh === smh)
         .sort((a,b) => String(a.puCode).localeCompare(String(b.puCode), undefined, {numeric:true}));
       const demandSmhLabel = detailDemandSMHLabel(dept.deptCode, smh);
       html += `<tr class="smh-row"><td></td><td>${htmlSafe(demandSmhLabel)}</td><td></td>${'<td></td>'.repeat(blankDetailCells)}</tr>`;
-      smhRows.forEach(r => {
+      NR_FILTERS.sort(smhRows,NR_FILTERS.detailRecord).forEach(r => {
         const bal = r.budget - r.actualTill;
         const noExpCls = isSMHBudgetNoExpense(r) ? ' no-exp-row' : '';
         const bp = detailBPStatus(r);
@@ -5184,15 +5195,15 @@ function renderSMHDetail() {
   monthKeys.forEach((m, idx) => { if ((data.totals.months[m] || 0) !== 0) lastActualIdx = idx; });
   lastActualIdx = Math.max(2, lastActualIdx);
   const visibleMonthKeys = monthKeys.slice(0, lastActualIdx + 1);
-  const rows = data.rows.filter(r =>
+  const rows = NR_FILTERS.detail(data.rows.filter(r =>
     !isSkippedDisplayPU(r.puCode) &&
     passesPUFocus(r.puCode) &&
     (dept === 'all' || r.deptCode === dept) &&
     (smh === 'all' || r.smh === smh) &&
     (selectedPUs.includes('all') || selectedPUs.includes(r.puCode)) &&
     (activityFilter !== 'budget-no-exp' || isSMHBudgetNoExpense(r))
-  );
-  const grouped = aggregateDetailRows(rows, mode === 'report' ? 'pu' : mode);
+  ));
+  const grouped = NR_FILTERS.sort(aggregateDetailRows(rows, mode === 'report' ? 'pu' : mode),NR_FILTERS.detailRecord);
   const totals = makeDetailTotal(rows);
   const balance = totals.budget - totals.actualTill;
   const util = totals.budget ? (totals.actualTill / totals.budget) * 100 : 0;
@@ -5311,7 +5322,7 @@ function demandSMHData() {
 
 function demandSMHRows() {
   const data = demandSMHData();
-  return Array.isArray(data.rows) ? data.rows : [];
+  return window.NR_FILTERS?NR_FILTERS.demand(Array.isArray(data.rows)?data.rows:[]):(Array.isArray(data.rows)?data.rows:[]);
 }
 
 function isDemandSMHSuspense(row) {
@@ -6043,7 +6054,7 @@ async function downloadExcel() {
 
 
 function reportRowsForActivePUs() {
-  return activePUMeta().filter(pu => passesPUFocus(pu.code)).map(pu => {
+  return getFiltered().filter(pu => passesPUFocus(pu.code)).map(pu => {
     const cv = compute(pu.code);
     const budget = cv.budget || 0;
     const actual = cv.totalCommitted || 0;
@@ -8581,7 +8592,7 @@ function renderTrendFallback() {
   const useBPSelection = !!((document.getElementById('trendUseBPPU') || {}).checked);
   const topNv  =(document.getElementById('trendTopN') ||{}).value||'10';
   const topN   =topNv==='999'?999:parseInt(topNv, 10);
-  const activePUs=activePUMeta().filter(p => passesPUFocus(p.code));
+  const activePUs=getFiltered().filter(p => passesPUFocus(p.code));
   const trendSelectedCodes = useBPSelection ? bpSelectedCodes() : (puSel === 'ALL' ? ['all'] : [puSel]);
   const puList=trendSelectedCodes.includes('all') ? activePUs : activePUs.filter(p=>trendSelectedCodes.includes(p.code));
   const trendScopeLabel = useBPSelection
@@ -8662,7 +8673,7 @@ function renderTrendLegacy(){
   const actualDoneIdxs = monthStatus.actualMonths.map(m => MK.indexOf(m)).filter(i => i >= 0);
   if (!actualDoneIdxs.includes(CUR_IDX)) actualDoneIdxs.push(CUR_IDX);
   const ML_S=['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'];
-  const activePUs=activePUMeta().filter(p => passesPUFocus(p.code));
+  const activePUs=getFiltered().filter(p => passesPUFocus(p.code));
   const trendSelectedCodes = useBPSelection ? bpSelectedCodes() : (puSel === 'ALL' ? ['all'] : [puSel]);
   const puList=trendSelectedCodes.includes('all')
     ? activePUs
@@ -8959,6 +8970,7 @@ function renderMonthwise() {
 }
 
 function renderAll() {
+  window.NR_FILTERS?.sync();
   window.renderZonalFR?.();
   window.refreshNRYearComparisons?.();
   initPopup();

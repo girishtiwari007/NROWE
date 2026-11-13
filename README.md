@@ -26,3 +26,7 @@ Missing data is shown as unavailable. The previous-year department-budget all-AU
 Run tools/test_calculations.cjs for calculation scenarios. The NR portal simulation checks all 23 scopes, financial pages, FR views, filters and editable Excel/PDF/PPT exports. Export access retains the existing portal login/confirmation controls. The main navigation labels can be selected and copied.
 
 Use the Export comparison buttons beside each year-comparison table for compact Excel/PDF/PPT reports. The ordinary page export retains the full current report plus the year comparison. Run node tools/test_nr_portal.cjs while the local server is running (Edge and Playwright required); NR_PORTAL_URL and NR_PLAYWRIGHT can override the local URL and browser library. Results are written to data/mb-budget-sync/nr-test-output by default.
+
+## Division/AU and PU selection
+
+Use the ribbon checkbox menus to select one or more AUs, and choose All, Staff, Non Staff or Specific PU(s). Filter by and Sort by apply the fields available on each page. PU Master opens in Table View. See [filter instructions](docs/NR-FILTERS.md) for scope aggregation, independent FR selections and export behavior.

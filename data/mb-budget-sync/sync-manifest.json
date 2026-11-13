@@ -763,10 +763,11 @@
   "portalValidation": {
     "report": "data/mb-budget-sync/nr-portal-test.json",
     "frViews": 13,
-    "exports": 18,
-    "scopeViewChecks": 276,
+    "multiSelection": true,
+    "sourceRevision": "7b2a1cc2ab4d",
+    "exports": 21,
     "ok": true,
-    "reportingPeriodFixtures": 3,
-    "sourceRevision": "7b2a1cc2ab4d"
+    "scopeViewChecks": 276,
+    "uiVersion": "20261113-filter1"
   }
 }

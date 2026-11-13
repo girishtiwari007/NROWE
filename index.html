@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="assets/css/executive-portal.css?v=20261009-py2">
 <script src="assets/vendor/xlsx.full.min.js"></script>
 <link rel="stylesheet" href="assets/css/zonal-fr.css?v=20261009-py2">
+<link rel="stylesheet" href="assets/css/nr-filter-controls.css?v=20261113-filter1">
 </head>
 <body class="professional-preview">
 <a class="mb-budget-link" href="https://girishtiwari007.github.io/MB-BUDGET/" title="Back to MB-BUDGET PORTAL">← Back to MB-BUDGET PORTAL</a>
@@ -162,7 +163,7 @@
   <div class="fbar-group filter-main">
     <span class="fbar-lbl">Filters</span>
     <label for="nrScopeFilter" style="color:#fff;white-space:nowrap;font-size:10px">Zone / Division / AU</label>
-    <select class="fsel wide" id="nrScopeFilter" onchange="applyNRScope(this.value)"></select>
+    <select class="fsel wide" id="nrScopeFilter" aria-label="Zone / Division / AU" onchange="applyNRScope(this.value)"></select>
     <select class="fsel" id="typeFilter" onchange="handleTopFilterChange('PU Type filter')">
       <option value="all">All PU Types</option>
       <option value="Staff">Staff PU</option>
@@ -178,7 +179,7 @@
       <option value="budget-no-exp">Budget Available, No Expenses</option>
     </select>
     <select class="fsel important-filter" id="puFocusFilter" onchange="handleTopFilterChange('PU Focus filter')">
-      <option value="all">All PUs</option>
+      <option value="all">All PU priorities</option>
       <option value="important">Important PUs only</option>
     </select>
     <span class="util-filter">
@@ -438,8 +439,8 @@
         <div class="pu-master-sub">Primary Unit reference with budget, actual, balance, utilisation and quick drill-down actions.</div>
       </div>
       <div class="pu-master-toggle" role="group" aria-label="PU Master view">
-        <button type="button" class="active" id="puCardViewBtn" onclick="setPUMasterView('card')">Card View</button>
-        <button type="button" id="puTableViewBtn" onclick="setPUMasterView('table')">Table View</button>
+        <button type="button" id="puCardViewBtn" onclick="setPUMasterView('card')">Card View</button>
+        <button type="button" class="active" id="puTableViewBtn" onclick="setPUMasterView('table')">Table View</button>
       </div>
     </div>
     <div class="pu-master-kpis" id="puMasterKpis"></div>
@@ -464,8 +465,8 @@
         <option value="over">Over 100%</option>
       </select>
     </div>
-    <div class="pu-card-grid" id="puMasterCards"></div>
-    <div class="pu-master-table-wrap" id="puMasterTableWrap" style="display:none">
+    <div class="pu-card-grid" id="puMasterCards" hidden></div>
+    <div class="pu-master-table-wrap" id="puMasterTableWrap">
       <table class="pu-master-table sortable-report">
         <thead><tr>
           <th class="la">PU Code</th><th class="la">Description</th>
@@ -557,7 +558,7 @@
       </div>
       <select class="trend-sel" id="aiTrendScope" onchange="renderAITrendSummary()">
         <option value="priority">Priority PUs</option>
-        <option value="all">All PUs</option>
+        <option value="all">All PU priorities</option>
         <option value="over">Overspent / High Risk</option>
       </select>
       <div class="ai-summary-expand-actions">
@@ -759,7 +760,7 @@
       </div>
       <div class="xs-controls">
         <select id="xsScope" onchange="renderExcessShortfall()">
-          <option value="all">All PUs</option>
+          <option value="all">All PU priorities</option>
           <option value="hq">HQ PU List Only</option>
         </select>
         <select id="xsSort" onchange="renderExcessShortfall()">
@@ -1148,16 +1149,17 @@
 <script src="assets/vendor/jspdf.plugin.autotable.min.js"></script>
 <script src="assets/js/smh-matrix-export.js?v=20261009-py2"></script>
 <script src="assets/vendor/pptxgen.bundle.js"></script>
-<script src="assets/js/display-export.js?v=20261009-py2"></script>
+<script src="assets/js/display-export.js?v=20261113-filter1"></script>
 <script src="assets/js/zone-au-data.js?v=nr-7b2a1cc2ab4d"></script>
 <script src="assets/js/zone-au-py-data.js?v=nr-7b2a1cc2ab4d"></script>
-<script src="assets/js/zone-au-scope.js?v=20261009-py2"></script>
-<script src="assets/js/zonal-fr.js?v=20261113-period1"></script>
+<script src="assets/js/nr-filter-controls.js?v=20261113-filter1"></script>
+<script src="assets/js/zone-au-scope.js?v=20261113-filter1"></script>
+<script src="assets/js/zonal-fr.js?v=20261113-filter1"></script>
 <script src="assets/js/fr-monitoring.js?v=20261113-period1"></script>
-<script src="assets/js/nr-graphs.js?v=20261009-py2"></script>
+<script src="assets/js/nr-graphs.js?v=20261113-filter1"></script>
 <script src="assets/js/fr-enhancements.js?v=20261113-period1"></script>
-<script src="assets/js/nr-year-comparison.js?v=20261009-py2"></script>
-<script src="assets/js/app.js?v=20261009-py2"></script>
+<script src="assets/js/nr-year-comparison.js?v=20261113-filter1"></script>
+<script src="assets/js/app.js?v=20261113-filter1"></script>
 <script>DisplayExport.init();</script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
