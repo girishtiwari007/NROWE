@@ -11,13 +11,13 @@ Serve this repository with a local HTTP server. Current preview: http://127.0.0.
 1. Replace the current-year reports in data/mb-budget-sync/source-files/2026-2027 and previous-year reports in data/mb-budget-sync/source-files/2025-2026.
 2. Keep the twelve Zone/AU report filenames per year listed in tools/nr-source-config.json, or edit that configuration when names change. Roles are PU budget, PU monthly actual, department budget, department monthly actual, Demand budget and Demand monthly actual, for Zone and AUs.
 3. Run SYNC-NR-ZONE-LOCAL.bat. Both year builds validate before payload publication; the sync records source SHA-256 hashes, scope coverage and rounding reconciliation. It creates scoped recovery copies in data/mb-budget-sync/nr-history. It never contacts GitHub or writes another repository.
-4. Reload the portal. Reporting month follows the latest populated current-year actual month; FR Review remains explicitly September 2026.
+4. Reload the portal. Reporting month follows the latest populated current-year actual month; FR Review, monitoring and AI Insight follow the completed source months and exclude the running month; their benchmark is completed months / 12.
 
 The old START-MBRLR-LOCAL-SYNC.bat now redirects to this NR workflow. The legacy Python single-AU sync is disabled in this repository. The detail/demand compatibility scripts contain no old Moradabad values; the selected NR payload supplies their data.
 
 ## Previous-year comparisons
 
-All financial report pages include a matching-period comparison table and export it through Excel/PDF/PPT. Graphs, AI Trend and AE vs BP also use the selected scope's previous-year PU datasets. FR Review, Expenditure Monitoring and AI Insight compare April–September 2026 against April–September 2025. Full previous-year actuals are retained for explicitly labelled annual AE columns. Comparisons do not combine Zone totals with AU totals.
+All financial report pages include a matching-period comparison table and export it through Excel/PDF/PPT. Graphs, AI Trend and AE vs BP also use the selected scope's previous-year PU datasets. FR Review, Expenditure Monitoring and AI Insight compare the same completed fiscal months in both years. Full previous-year actuals are retained for explicitly labelled annual AE columns. Comparisons do not combine Zone totals with AU totals.
 
 Missing data is shown as unavailable. The previous-year department-budget all-AU workbook ends at row 32768 inside AU 0325. That AU's partial budget and subsequent uncovered AU budgets are not used for comparison; department monthly actuals remain available. Zonal named-department budgets are coded 00 and are not allocated to named departments.
 

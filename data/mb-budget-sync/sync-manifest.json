@@ -2,95 +2,95 @@
   "ok": true,
   "mode": "nr-zone-local-sync",
   "targetRepo": "D:\\github\\NROWE",
-  "generatedAt": "2026-10-09T09:47:52.799Z",
-  "sourceRevision": "f0deb9a681b0",
-  "assetVersion": "nr-f0deb9a681b0",
+  "generatedAt": "2026-11-13T05:27:48.686Z",
+  "sourceRevision": "7b2a1cc2ab4d",
+  "assetVersion": "nr-7b2a1cc2ab4d",
   "financialYear": "2026-2027",
   "previousYear": "2025-2026",
-  "reportingCurrentMonthIdx": 6,
+  "reportingCurrentMonthIdx": 7,
   "sources": [
     {
       "fy": "2026-2027",
       "name": "PU-BUDGET NR ZONE.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/PU-BUDGET NR ZONE.xls",
-      "sha256": "ca350611a4f83e2380e3b3ccec4afac7047e670bbb1ba0c75cda604e603dfde0",
+      "sha256": "56cc1e0af69d660ab6d8a7bf21032059c3ab125321f2ca3d0d6a0a270d46e333",
       "size": 31232
     },
     {
       "fy": "2026-2027",
       "name": "PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
-      "sha256": "13ccb5d8d0de625a3d696995e5ff7ba6e4ff6e7a05ac4ee439691466eb7b3c9f",
-      "size": 19968
+      "sha256": "37301ef1c064e04a217fe4b795a758031a3e01cc59b04670d08b6d9356b9cd66",
+      "size": 20480
     },
     {
       "fy": "2026-2027",
       "name": "pu-dept-demand-smh-budget-NR.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-budget-NR.xls",
-      "sha256": "7debe4cc99eef062322fb4185a74680fbfcc83928d7f6ee221e43b6c082b8bf8",
-      "size": 2058752
+      "sha256": "0bb7a26af9093266d6340c56dc80c76f2d0e9b79b38483fb2711a922125bb1a2",
+      "size": 2065408
     },
     {
       "fy": "2026-2027",
       "name": "pu-dept-demand-smh-actual-NR.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-actual-NR.xls",
-      "sha256": "9fba3239a5fc4a14727a976364666b2dba277c0e2adfe9b9aa5a6f468bfd6407",
-      "size": 2496000
+      "sha256": "03956298fe10de5635e24b169e9b26c8a78e13d6ccde47eaf7c6ddb09e04480f",
+      "size": 2670592
     },
     {
       "fy": "2026-2027",
       "name": "demand-smh-budget-ZONE.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-budget-ZONE.xls",
-      "sha256": "22e8f7dd2ff5498aeee214fd70f0546cc4d668b726dbec3f39508d83cf7e87bb",
+      "sha256": "7c303f1179a45a0f6475fad109dbf33e30ec2bd1f2b6e1600ffaf8bcb48acc80",
       "size": 10752
     },
     {
       "fy": "2026-2027",
       "name": "demand-smh-actual-ZONE.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-actual-ZONE.xls",
-      "sha256": "0a8e6f8521c2b7072b7925afced992c43c1f4ae2dd117e1ccc87c64c15849bf9",
+      "sha256": "32c835ad7da51cffbbef1879bc20ce8d71daae2691e56c5d79ba85914009ebea",
       "size": 8192
     },
     {
       "fy": "2026-2027",
       "name": "pu-budget - all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-budget - all div.xls",
-      "sha256": "003339e39898eae0a152703069c340dacf8cfa96eb200c1d6981b0e352acad8b",
-      "size": 220160
+      "sha256": "ff6e11e00c128a7e3692cfa555634203cb902b9ac6519071c923ea5f4217dce8",
+      "size": 221696
     },
     {
       "fy": "2026-2027",
       "name": "pu-month-actual -all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-month-actual -all div.xls",
-      "sha256": "8458076ff738dcda3f828e809db3e071f9ba11729332058a87e2ff3505bb0d04",
-      "size": 151552
+      "sha256": "1ed227c3dc9115a2b3663893caabfa4793dc4b7c6cb4c3786b87ed18640c3be3",
+      "size": 154112
     },
     {
       "fy": "2026-2027",
       "name": "pu-dept-demand-smh-budget-all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-budget-all div.xls",
-      "sha256": "972e7265380a5e8ec1c661faaf2a056815494fabe3dbc97b08ff20fe55366835",
-      "size": 12788736
+      "sha256": "99301a30b05c245eacb3f374f220a9a246a8a542555eaf9891c517102f733a47",
+      "size": 13016064
     },
     {
       "fy": "2026-2027",
       "name": "pu-dept-demand-smh-actual-all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-actual-all div.xls",
-      "sha256": "22bff8bdfe8c7fde06441d072f0f4002d8b2771a4e02fd70c6a8b05ca4438996",
-      "size": 4470272
+      "sha256": "60eeb5dedb84f03fd95557d151282b9c5a1d2eef24cd4a8d430e97c93c55addb",
+      "size": 4802048
     },
     {
       "fy": "2026-2027",
       "name": "demand-smh-budget -all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-budget -all div.xls",
-      "sha256": "458105cc993bfb765d9a8d482ecf30f04cb128b9fdb780a7bcc3145830bbf135",
+      "sha256": "297523902f11eef73b3fcd9c7af14789bd5793b1658bab08f60a2ab33160f84d",
       "size": 66048
     },
     {
       "fy": "2026-2027",
       "name": "demand-smh-actual - all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-actual - all div.xls",
-      "sha256": "fdb8daaea362f8f496c20de49139a7d626d753e8823adca94c664f96c6999211",
+      "sha256": "cd029c576ed5fc9493d8c30b769dfb5c30bb72a1de0859e048724992abaf3b25",
       "size": 53248
     },
     {
@@ -183,84 +183,84 @@
       "fy": "2026-2027",
       "name": "PU-BUDGET NR ZONE.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/PU-BUDGET NR ZONE.xls",
-      "sha256": "ca350611a4f83e2380e3b3ccec4afac7047e670bbb1ba0c75cda604e603dfde0",
+      "sha256": "56cc1e0af69d660ab6d8a7bf21032059c3ab125321f2ca3d0d6a0a270d46e333",
       "size": 31232
     },
     {
       "fy": "2026-2027",
       "name": "PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/PU-BUDGET-MONTH-ACTUAL-NR ZONE.xls",
-      "sha256": "13ccb5d8d0de625a3d696995e5ff7ba6e4ff6e7a05ac4ee439691466eb7b3c9f",
-      "size": 19968
+      "sha256": "37301ef1c064e04a217fe4b795a758031a3e01cc59b04670d08b6d9356b9cd66",
+      "size": 20480
     },
     {
       "fy": "2026-2027",
       "name": "pu-dept-demand-smh-budget-NR.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-budget-NR.xls",
-      "sha256": "7debe4cc99eef062322fb4185a74680fbfcc83928d7f6ee221e43b6c082b8bf8",
-      "size": 2058752
+      "sha256": "0bb7a26af9093266d6340c56dc80c76f2d0e9b79b38483fb2711a922125bb1a2",
+      "size": 2065408
     },
     {
       "fy": "2026-2027",
       "name": "pu-dept-demand-smh-actual-NR.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-actual-NR.xls",
-      "sha256": "9fba3239a5fc4a14727a976364666b2dba277c0e2adfe9b9aa5a6f468bfd6407",
-      "size": 2496000
+      "sha256": "03956298fe10de5635e24b169e9b26c8a78e13d6ccde47eaf7c6ddb09e04480f",
+      "size": 2670592
     },
     {
       "fy": "2026-2027",
       "name": "demand-smh-budget-ZONE.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-budget-ZONE.xls",
-      "sha256": "22e8f7dd2ff5498aeee214fd70f0546cc4d668b726dbec3f39508d83cf7e87bb",
+      "sha256": "7c303f1179a45a0f6475fad109dbf33e30ec2bd1f2b6e1600ffaf8bcb48acc80",
       "size": 10752
     },
     {
       "fy": "2026-2027",
       "name": "demand-smh-actual-ZONE.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-actual-ZONE.xls",
-      "sha256": "0a8e6f8521c2b7072b7925afced992c43c1f4ae2dd117e1ccc87c64c15849bf9",
+      "sha256": "32c835ad7da51cffbbef1879bc20ce8d71daae2691e56c5d79ba85914009ebea",
       "size": 8192
     },
     {
       "fy": "2026-2027",
       "name": "pu-budget - all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-budget - all div.xls",
-      "sha256": "003339e39898eae0a152703069c340dacf8cfa96eb200c1d6981b0e352acad8b",
-      "size": 220160
+      "sha256": "ff6e11e00c128a7e3692cfa555634203cb902b9ac6519071c923ea5f4217dce8",
+      "size": 221696
     },
     {
       "fy": "2026-2027",
       "name": "pu-month-actual -all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-month-actual -all div.xls",
-      "sha256": "8458076ff738dcda3f828e809db3e071f9ba11729332058a87e2ff3505bb0d04",
-      "size": 151552
+      "sha256": "1ed227c3dc9115a2b3663893caabfa4793dc4b7c6cb4c3786b87ed18640c3be3",
+      "size": 154112
     },
     {
       "fy": "2026-2027",
       "name": "pu-dept-demand-smh-budget-all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-budget-all div.xls",
-      "sha256": "972e7265380a5e8ec1c661faaf2a056815494fabe3dbc97b08ff20fe55366835",
-      "size": 12788736
+      "sha256": "99301a30b05c245eacb3f374f220a9a246a8a542555eaf9891c517102f733a47",
+      "size": 13016064
     },
     {
       "fy": "2026-2027",
       "name": "pu-dept-demand-smh-actual-all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/pu-dept-demand-smh-actual-all div.xls",
-      "sha256": "22bff8bdfe8c7fde06441d072f0f4002d8b2771a4e02fd70c6a8b05ca4438996",
-      "size": 4470272
+      "sha256": "60eeb5dedb84f03fd95557d151282b9c5a1d2eef24cd4a8d430e97c93c55addb",
+      "size": 4802048
     },
     {
       "fy": "2026-2027",
       "name": "demand-smh-budget -all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-budget -all div.xls",
-      "sha256": "458105cc993bfb765d9a8d482ecf30f04cb128b9fdb780a7bcc3145830bbf135",
+      "sha256": "297523902f11eef73b3fcd9c7af14789bd5793b1658bab08f60a2ab33160f84d",
       "size": 66048
     },
     {
       "fy": "2026-2027",
       "name": "demand-smh-actual - all div.xls",
       "relativePath": "data/mb-budget-sync/source-files/2026-2027/demand-smh-actual - all div.xls",
-      "sha256": "fdb8daaea362f8f496c20de49139a7d626d753e8823adca94c664f96c6999211",
+      "sha256": "cd029c576ed5fc9493d8c30b769dfb5c30bb72a1de0859e048724992abaf3b25",
       "size": 53248
     },
     {
@@ -761,12 +761,12 @@
     }
   ],
   "portalValidation": {
-    "ok": true,
-    "testedAt": "2026-10-09T09:39:05.635Z",
-    "scopes": 23,
-    "scopeViewChecks": 276,
+    "report": "data/mb-budget-sync/nr-portal-test.json",
     "frViews": 13,
     "exports": 18,
-    "report": "data/mb-budget-sync/nr-portal-test.json"
+    "scopeViewChecks": 276,
+    "ok": true,
+    "reportingPeriodFixtures": 3,
+    "sourceRevision": "7b2a1cc2ab4d"
   }
 }

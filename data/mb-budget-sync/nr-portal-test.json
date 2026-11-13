@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-10-09T09:39:05.635Z",
+  "generatedAt": "2026-11-13T05:35:04.513Z",
   "scopes": 23,
   "scopeViewChecks": 276,
   "frViews": 13,
@@ -13,11 +13,11 @@
       "name": "NR Zone — 03",
       "cyBudget": 242361059,
       "pyBudget": 245171187,
-      "cyActual": 137339074,
-      "pyActual": 136049941
+      "cyActual": 162505608,
+      "pyActual": 153621349
     },
-    "cy": 137339074,
-    "py": 136049941,
+    "cy": 162505608,
+    "py": 153621349,
     "partial": true
   },
   "errors": [],
@@ -51,7 +51,7 @@
     {
       "scope": "03",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "03",
@@ -71,7 +71,7 @@
     {
       "scope": "03",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "03",
@@ -111,7 +111,7 @@
     {
       "scope": "0301",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0301",
@@ -131,7 +131,7 @@
     {
       "scope": "0301",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0301",
@@ -171,7 +171,7 @@
     {
       "scope": "0303",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0303",
@@ -191,7 +191,7 @@
     {
       "scope": "0303",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0303",
@@ -231,7 +231,7 @@
     {
       "scope": "0304",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0304",
@@ -251,7 +251,7 @@
     {
       "scope": "0304",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0304",
@@ -271,7 +271,7 @@
     {
       "scope": "0305",
       "tab": "liability",
-      "rows": 43
+      "rows": 44
     },
     {
       "scope": "0305",
@@ -286,42 +286,42 @@
     {
       "scope": "0305",
       "tab": "pumaster",
-      "rows": 43
+      "rows": 44
     },
     {
       "scope": "0305",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0305",
       "tab": "bpanalysis",
-      "rows": 43
+      "rows": 44
     },
     {
       "scope": "0305",
       "tab": "budgetcontrol",
-      "rows": 43
+      "rows": 44
     },
     {
       "scope": "0305",
       "tab": "excessshortfall",
-      "rows": 43
+      "rows": 44
     },
     {
       "scope": "0305",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0305",
       "tab": "aitrend",
-      "rows": 35
+      "rows": 36
     },
     {
       "scope": "0305",
       "tab": "historycompare",
-      "rows": 43
+      "rows": 44
     },
     {
       "scope": "0306",
@@ -351,7 +351,7 @@
     {
       "scope": "0306",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0306",
@@ -371,7 +371,7 @@
     {
       "scope": "0306",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0306",
@@ -411,7 +411,7 @@
     {
       "scope": "0307",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0307",
@@ -431,7 +431,7 @@
     {
       "scope": "0307",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0307",
@@ -451,7 +451,7 @@
     {
       "scope": "0308",
       "tab": "liability",
-      "rows": 34
+      "rows": 35
     },
     {
       "scope": "0308",
@@ -466,42 +466,42 @@
     {
       "scope": "0308",
       "tab": "pumaster",
-      "rows": 34
+      "rows": 35
     },
     {
       "scope": "0308",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0308",
       "tab": "bpanalysis",
-      "rows": 34
+      "rows": 35
     },
     {
       "scope": "0308",
       "tab": "budgetcontrol",
-      "rows": 34
+      "rows": 35
     },
     {
       "scope": "0308",
       "tab": "excessshortfall",
-      "rows": 34
+      "rows": 35
     },
     {
       "scope": "0308",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0308",
       "tab": "aitrend",
-      "rows": 26
+      "rows": 27
     },
     {
       "scope": "0308",
       "tab": "historycompare",
-      "rows": 34
+      "rows": 35
     },
     {
       "scope": "0309",
@@ -531,7 +531,7 @@
     {
       "scope": "0309",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0309",
@@ -551,7 +551,7 @@
     {
       "scope": "0309",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0309",
@@ -571,7 +571,7 @@
     {
       "scope": "0311",
       "tab": "liability",
-      "rows": 40
+      "rows": 41
     },
     {
       "scope": "0311",
@@ -586,42 +586,42 @@
     {
       "scope": "0311",
       "tab": "pumaster",
-      "rows": 40
+      "rows": 41
     },
     {
       "scope": "0311",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0311",
       "tab": "bpanalysis",
-      "rows": 40
+      "rows": 41
     },
     {
       "scope": "0311",
       "tab": "budgetcontrol",
-      "rows": 40
+      "rows": 41
     },
     {
       "scope": "0311",
       "tab": "excessshortfall",
-      "rows": 40
+      "rows": 41
     },
     {
       "scope": "0311",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0311",
       "tab": "aitrend",
-      "rows": 32
+      "rows": 33
     },
     {
       "scope": "0311",
       "tab": "historycompare",
-      "rows": 40
+      "rows": 41
     },
     {
       "scope": "0312",
@@ -651,7 +651,7 @@
     {
       "scope": "0312",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0312",
@@ -671,7 +671,7 @@
     {
       "scope": "0312",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0312",
@@ -691,7 +691,7 @@
     {
       "scope": "0313",
       "tab": "liability",
-      "rows": 35
+      "rows": 36
     },
     {
       "scope": "0313",
@@ -706,42 +706,42 @@
     {
       "scope": "0313",
       "tab": "pumaster",
-      "rows": 35
+      "rows": 36
     },
     {
       "scope": "0313",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0313",
       "tab": "bpanalysis",
-      "rows": 35
+      "rows": 36
     },
     {
       "scope": "0313",
       "tab": "budgetcontrol",
-      "rows": 35
+      "rows": 36
     },
     {
       "scope": "0313",
       "tab": "excessshortfall",
-      "rows": 35
+      "rows": 36
     },
     {
       "scope": "0313",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0313",
       "tab": "aitrend",
-      "rows": 27
+      "rows": 28
     },
     {
       "scope": "0313",
       "tab": "historycompare",
-      "rows": 35
+      "rows": 36
     },
     {
       "scope": "0318",
@@ -771,7 +771,7 @@
     {
       "scope": "0318",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0318",
@@ -791,7 +791,7 @@
     {
       "scope": "0318",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0318",
@@ -831,7 +831,7 @@
     {
       "scope": "0319",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0319",
@@ -851,7 +851,7 @@
     {
       "scope": "0319",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0319",
@@ -891,7 +891,7 @@
     {
       "scope": "0320",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0320",
@@ -911,7 +911,7 @@
     {
       "scope": "0320",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0320",
@@ -951,7 +951,7 @@
     {
       "scope": "0322",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0322",
@@ -971,7 +971,7 @@
     {
       "scope": "0322",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0322",
@@ -1011,7 +1011,7 @@
     {
       "scope": "0323",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0323",
@@ -1031,7 +1031,7 @@
     {
       "scope": "0323",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0323",
@@ -1071,7 +1071,7 @@
     {
       "scope": "0325",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0325",
@@ -1091,7 +1091,7 @@
     {
       "scope": "0325",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0325",
@@ -1131,7 +1131,7 @@
     {
       "scope": "0327",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0327",
@@ -1151,7 +1151,7 @@
     {
       "scope": "0327",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0327",
@@ -1191,7 +1191,7 @@
     {
       "scope": "0328",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0328",
@@ -1211,7 +1211,7 @@
     {
       "scope": "0328",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0328",
@@ -1251,7 +1251,7 @@
     {
       "scope": "0329",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0329",
@@ -1271,7 +1271,7 @@
     {
       "scope": "0329",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0329",
@@ -1311,7 +1311,7 @@
     {
       "scope": "0330",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0330",
@@ -1331,7 +1331,7 @@
     {
       "scope": "0330",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0330",
@@ -1371,7 +1371,7 @@
     {
       "scope": "0331",
       "tab": "monthwise",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0331",
@@ -1391,7 +1391,7 @@
     {
       "scope": "0331",
       "tab": "trend",
-      "rows": 6
+      "rows": 7
     },
     {
       "scope": "0331",
@@ -1404,17 +1404,12 @@
       "rows": 3
     }
   ],
-  "additionalChecks": {
-    "rgSourceControls": 46,
-    "compactComparisonExports": [
-      "Excel",
-      "PDF",
-      "PPT"
-    ],
-    "compactPPTNativeTables": 8,
-    "utilityPages": true,
-    "missingPreviousYearInputsPreserveBothPayloads": true,
-    "filteredGraphsAndBI": true,
-    "visibleOnlyPageExports": 18
+  "sourceRevision": "7b2a1cc2ab4d",
+  "completedPeriod": "April-October 2026; November running",
+  "reportingPeriodValidation": {
+    "exportsUseSourcePeriod": true,
+    "ok": true,
+    "rolloverFixtures": 3,
+    "actualRsThousands": 162505608
   }
 }
