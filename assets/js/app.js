@@ -4080,6 +4080,8 @@ const BACKUP_FILE_LIST = Object.freeze([
   'assets/js/zone-au-py-data.js',
   'assets/js/zone-au-scope.js',
   'assets/js/nr-filter-controls.js',
+  'assets/js/nr-au-views.js',
+  'assets/css/nr-au-views.css',
   'assets/css/nr-filter-controls.css',
   'assets/js/zonal-fr.js',
   'assets/js/fr-monitoring.js',
@@ -6974,7 +6976,7 @@ function openPUDetail(code) {
   <div class="pu-num">PU-${pu.code}</div>
   <div class="pu-info">
     <h1>${pu.desc}</h1>
-    <p>NR Zone / Northern Railway  -  FY 2026-27  -  All figures in Rs '000s</p>
+    <p>${htmlSafe(window.nrScopeLabel())} / Northern Railway  -  FY 2026-27  -  All figures in Rs '000s</p>
     <div class="badges">
       <span class="pbadge" style="background:${typeCol}">${pu.puType}</span>
       <span class="pbadge" style="background:${pu.liab==='Committed'?'#1A7A4A':pu.liab==='Recovery'?'#8B0000':'#4A6A90'}">${pu.liab}</span>
@@ -7072,7 +7074,7 @@ function isSummaryHoverTarget(target) {
   const td = target.closest('td');
   if (!td || !tr.contains(td)) return false;
   const cells = Array.from(tr.children).filter(el => el.tagName === 'TD');
-  const idx = cells.indexOf(td);
+  const idx = cells.indexOf(td)-(cells[0]?.dataset.nrAuCell?1:0);
   return idx === 0 || idx === 1 || /desc|description|pu/i.test(td.getAttribute('data-label') || '');
 }
 
@@ -7081,7 +7083,7 @@ function selectableReportRow(target) {
   if (target.closest('#puPopup,button,a,input,select,textarea,summary,label')) return null;
   const tr = target.closest('tbody tr');
   if (!tr || tr.closest('thead')) return null;
-  if (!tr.closest('.twrap,.smh-table-wrap,.demand-smh-table-card,.bp-table-wrap,.bc-table-wrap,.pu-master-table-wrap,.xs-scroll,.history-compare-card,.ai-month-table-wrap,.remarks-section,#trendTable')) return null;
+  if (!tr.closest('.twrap,.smh-table-wrap,.demand-smh-table-card,.bp-table-wrap,.bc-table-wrap,.pu-master-table-wrap,.xs-scroll,.history-compare-card,.ai-month-table-wrap,.remarks-section,.nr-au-table-scroll,#trendTable')) return null;
   return tr;
 }
 
@@ -9090,8 +9092,9 @@ function sortValueFromText(text) {
 }
 
 function tableRowIsLocked(row) {
-  const text = String(row.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
-  const first = String(row.cells[0]?.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+  const cells=Array.from(row.cells).slice(row.cells[0]?.dataset.nrAuCell?1:0);
+  const text = cells.map(c=>c.textContent).join(' ').replace(/\s+/g, ' ').trim().toLowerCase();
+  const first = String(cells[0]?.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
   return row.classList.contains('tot') ||
     row.classList.contains('dept-total') ||
     row.classList.contains('demand-smh-total') ||
@@ -9115,7 +9118,7 @@ function sortableRowGroups(tbody) {
       groups.push({locked:true, rows:[row]});
       return;
     }
-    const first = String(row.cells[0]?.textContent || '').trim();
+    const first = String(row.cells[row.cells[0]?.dataset.nrAuCell?1:0]?.textContent || '').trim();
     const prev = groups[groups.length - 1];
     if (!first && prev && !prev.locked) prev.rows.push(row);
     else groups.push({locked:false, rows:[row]});

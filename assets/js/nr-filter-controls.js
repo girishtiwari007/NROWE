@@ -6,7 +6,7 @@
  const numeric=new Set(['budget','actual','balance','util']);
  const fields={code:'PU code',name:'Description',type:'PU type',liability:'Liability',budget:'Budget (₹ Cr)',actual:'Actual / committed (₹ Cr)',balance:'Balance (₹ Cr)',util:'Utilisation (%)',dept:'Department',demand:'Demand / SMH'};
  const state={pus:[],pages:{}};let ready=false,timer;
- const tab=()=>typeof activeTabName==='function'?activeTabName():'summary';
+ const tab=()=>root.NR_FILTER_CONTEXT_TAB||(typeof activeTabName==='function'?activeTabName():'summary');
  const pageState=()=>state.pages[tab()]??={field:'',operator:'contains',value:'',sort:'',direction:'asc'};
  function meta(code){return PU_META.find(p=>p.code===code)||{code,desc:code};}
  function puRecord(pu){const c=compute(pu.code);return {code:pu.code,name:pu.desc,type:pu.puType,liability:pu.liab,budget:c.budget,actual:c.totalCommitted,balance:c.balanceBudget,util:c.utilisedPct};}
@@ -69,5 +69,5 @@
   detail:rows=>apply(rows.filter(r=>acceptPU(r.puCode)),detailRecord),
   demand:rows=>apply(rows,r=>({demand:r.demand+' / '+r.smh,name:r.description,budget:r.oba,actual:r.ae,balance:r.budgetRemaining,util:r.obaUtil})),
   puRows:rows=>apply(rows,r=>({...puRecord(r.pu),budget:r.budget??r.ceiling,actual:r.actualTill,balance:(r.budget??r.ceiling)-r.actualTill,util:r.utilPct})),
-  fieldState:pageState,snapshot:()=>({pus:[...state.pus],pages:JSON.parse(JSON.stringify(state.pages)),scopes:root.nrSelectedScopeCodes(),mode:document.getElementById('typeFilter').value}),restore:cfg=>{if(!cfg)return;state.pus=(cfg.pus||[]).filter(c=>PU_META.some(p=>p.code===c));state.pages=cfg.pages||{};document.getElementById('typeFilter').value=cfg.mode||'all';if(cfg.scopes?.length)root.applyNRScopes(cfg.scopes,false);sync();}};
+  fieldState:pageState,snapshot:()=>({displayMode:root.NR_SCOPE_VIEW?.get(),pus:[...state.pus],pages:JSON.parse(JSON.stringify(state.pages)),scopes:root.nrSelectedScopeCodes(),mode:document.getElementById('typeFilter').value}),restore:cfg=>{if(!cfg)return;if(cfg.displayMode)root.NR_SCOPE_VIEW?.set(cfg.displayMode);state.pus=(cfg.pus||[]).filter(c=>PU_META.some(p=>p.code===c));state.pages=cfg.pages||{};document.getElementById('typeFilter').value=cfg.mode||'all';if(cfg.scopes?.length)root.applyNRScopes(cfg.scopes,false);sync();}};
 })(window);

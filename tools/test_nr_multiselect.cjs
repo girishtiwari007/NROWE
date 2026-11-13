@@ -3,7 +3,7 @@ const {chromium}=require(process.env.NR_PLAYWRIGHT||'C:/Users/HP/.cache/codex-ru
 const output=process.env.NR_TEST_OUTPUT||path.resolve(__dirname,'../data/mb-budget-sync/nr-test-output/multiselect');fs.mkdirSync(output,{recursive:true});
 (async()=>{
  const browser=await chromium.launch({channel:'msedge',headless:true});const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto((process.env.NR_PORTAL_URL||'http://127.0.0.1:8874/'),{waitUntil:'networkidle'});await page.evaluate(()=>switchTab('liability'));await page.waitForTimeout(300);
+ await page.goto((process.env.NR_PORTAL_URL||'http://127.0.0.1:8874/'),{waitUntil:'networkidle'});await page.evaluate(()=>window.NR_SCOPE_VIEW?.set('combined'));await page.evaluate(()=>switchTab('liability'));await page.waitForTimeout(300);
  await page.locator('#nrScopeChecks summary').click();await page.locator('#nrScopeChecks input[value="0303"]').check();await page.locator('#nrScopeChecks input[value="0307"]').check();await page.waitForTimeout(300);
  let check=await page.evaluate(()=>{
   const chosen=['0303','0307'],scopes=chosen.map(c=>NR_ZONE_DATA.scopes[c]),py=chosen.map(c=>NR_ZONE_PY_DATA.scopes[c]);

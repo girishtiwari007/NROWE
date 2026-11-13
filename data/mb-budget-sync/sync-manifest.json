@@ -761,13 +761,13 @@
     }
   ],
   "portalValidation": {
-    "report": "data/mb-budget-sync/nr-portal-test.json",
-    "frViews": 13,
-    "multiSelection": true,
     "sourceRevision": "7b2a1cc2ab4d",
-    "exports": 21,
+    "uiVersion": "20261113-auview1",
     "ok": true,
-    "scopeViewChecks": 276,
-    "uiVersion": "20261113-filter1"
+    "frViews": 13,
+    "separateAUPages": 13,
+    "exports": 24,
+    "report": "data/mb-budget-sync/nr-portal-test.json",
+    "scopeViewChecks": 276
   }
 }

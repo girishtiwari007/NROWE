@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-13T06:05:15.196Z",
+  "generatedAt": "2026-11-13T06:37:19.749Z",
   "scopes": 23,
   "scopeViewChecks": 276,
   "frViews": 13,
@@ -1405,16 +1405,19 @@
     }
   ],
   "sourceRevision": "7b2a1cc2ab4d",
-  "uiVersion": "20261113-filter1",
-  "multiSelectionValidation": {
-    "mixedRGandZeroGrant": true,
-    "additionalExports": 3,
+  "uiVersion": "20261113-auview1",
+  "separateAUValidation": {
+    "pages": 13,
+    "modeSwitches": true,
+    "auPopup": true,
+    "firstAUColumn": true,
     "ok": true,
-    "savedViews": true,
-    "crossPageSelections": true,
+    "auSortingAndSubtotals": true,
+    "test": "tools/test_nr_au_views.cjs",
+    "independentAUBudgetAndPYCYControls": true,
+    "BI": true,
     "mobile": true,
-    "fieldFilteringAndComparisonSort": true,
-    "auAggregateControls": true,
-    "test": "tools/test_nr_multiselect.cjs"
+    "additionalExports": 6,
+    "independentFR": true
   }
 }

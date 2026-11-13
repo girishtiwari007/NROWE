@@ -76,6 +76,7 @@
     if(id==='zonalfr'&&document.getElementById('tab-zonalfr').dataset.frPage==='monitor'){for(const key of ['frSelectedAUs','frCompareMetric']){const el=document.getElementById(key);if(el&&((key==='frCompareMetric'&&document.getElementById('frMonitoringType').value)||['selected','zoneSelected'].includes(document.getElementById('frCompareGroup').value)))controls.push(key+': '+Array.from(el.selectedOptions).map(o=>o.textContent).join('; '));}}
     if(id!=='zonalfr'&&root.NR_FILTERS)controls.push(root.NR_FILTERS.exportSummary());
     if(id==='zonalfr'&&document.getElementById('tab-zonalfr').dataset.frPage==='review')controls.push('Review AU scope: '+(root.nrSelectedScopeCodes?.()||[]).join(', '));
+    if(root.NR_SCOPE_VIEW)controls.push('AU view: '+root.NR_SCOPE_VIEW.get());
     const sorts=[];
     section?.querySelectorAll('table').forEach(table=>{
       const active=table.querySelector('th[aria-sort="ascending"],th[aria-sort="descending"],th.sort-asc,th.sort-desc');
@@ -91,6 +92,7 @@
       period:`${report.title} | ${generated}`};
   }
   function capture(id,options={}){
+    root.NR_SCOPE_VIEW?.ensure(id);
     const tableOnly=!!options.tableOnly;
     const section=(document.body.classList.contains('bi-view-active') && id===(root.activeTabName?.()||id) && document.getElementById('biViewPanel'))
       ? document.getElementById('biViewPanel')
@@ -139,7 +141,7 @@
   function typed(value,col,header){
     if(typeof value==='number')return value;
     const s=clean(value);
-    if(col===0 || /code|unit|department|name|description|year|month|category/i.test(header))return s;
+    if(col===0 || /code|unit|department|name|description|year|month|category|\bPU\b|\bAU\b/i.test(header))return s;
     const raw=s.replace(/,/g,'');
     if(/^[+-]?\d+(\.\d+)?$/.test(raw))return Number(raw);
     return s;
